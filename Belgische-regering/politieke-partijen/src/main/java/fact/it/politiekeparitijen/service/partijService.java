@@ -9,6 +9,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.sql.Struct;
 import java.util.List;
 
 @Service
@@ -26,49 +27,56 @@ public class partijService {
             partij1.setAdres("Madouplein 8");
             partij1.setPostCode("1210");
             partij1.setStad("Brussel");
-            partij1.setCoalitie(false);
+            partij1.setCoalitieVlaams(false);
+            partij1.setCoalitieFederaal(false);
 
             partij partij2 = new partij();
             partij2.setPartijNaam("NVA");
             partij2.setAdres("Koningsstraat 47");
             partij2.setPostCode("1000");
             partij2.setStad("Brussel");
-            partij2.setCoalitie(false);
+            partij2.setCoalitieVlaams(true);
+            partij2.setCoalitieFederaal(false);
 
             partij partij3 = new partij();
             partij3.setPartijNaam("Open VLD");
             partij3.setAdres("Melsensstraat 34");
             partij3.setPostCode("1000 ");
             partij3.setStad("Brussel");
-            partij3.setCoalitie(true);
+            partij3.setCoalitieVlaams(true);
+            partij3.setCoalitieFederaal(true);
 
             partij partij4 = new partij();
             partij4.setPartijNaam("CD&V");
             partij4.setAdres("Gare Maritime");
             partij4.setPostCode("1000");
             partij4.setStad("Brussel");
-            partij4.setCoalitie(true);
+            partij4.setCoalitieVlaams(true);
+            partij4.setCoalitieFederaal(true);
 
             partij partij5 = new partij();
             partij5.setPartijNaam("Vooruit");
             partij5.setAdres("Keizerslaan 13");
             partij5.setPostCode("1000");
             partij5.setStad("Brussel");
-            partij5.setCoalitie(true);
+            partij5.setCoalitieVlaams(false);
+            partij5.setCoalitieFederaal(true);
 
             partij partij6 = new partij();
             partij6.setPartijNaam("Groen");
             partij6.setAdres("Van Orleystraat 5-11");
             partij6.setPostCode("1000");
             partij6.setStad("Brussel");
-            partij6.setCoalitie(true);
+            partij6.setCoalitieVlaams(false);
+            partij6.setCoalitieFederaal(true);
 
             partij partij7 = new partij();
             partij7.setPartijNaam("PVDA");
             partij7.setAdres("Maurice Lemonnierlaan 171");
             partij7.setPostCode("1000");
             partij7.setStad("Brussel");
-            partij7.setCoalitie(false);
+            partij7.setCoalitieVlaams(false);
+            partij7.setCoalitieFederaal(false);
 
             partijrepository.save(partij1);
             partijrepository.save(partij2);

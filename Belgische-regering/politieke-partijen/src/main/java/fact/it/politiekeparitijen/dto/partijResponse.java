@@ -15,5 +15,6 @@ public class partijResponse {
     private String adres;
     private String postCode;
     private String stad;
-    private boolean coalitie;
+    private boolean coalitieVlaams;
+    private boolean coalitieFederaal;
 }
