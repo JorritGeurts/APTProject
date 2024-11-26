@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>fact.it</groupId>
-	<artifactId>Regeringen</artifactId>
+	<artifactId>regeringen</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Regeringen</name>
 	<description>Regeringen</description>
