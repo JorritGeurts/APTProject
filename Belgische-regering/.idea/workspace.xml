@@ -7,9 +7,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2nTWmWhkIu95r5NtxN0UBvZ41dH" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -20,8 +23,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Jorrit Geurts/Documents/School/Jaar3/Semester1/APT/Project/Belgische-regering",
+    "last_opened_file_path": "C:/Users/Jorrit Geurts/Documents/School/Jaar3/Semester1/APT/Project/Belgische-regering/politieke-partijen",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -41,6 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1728997705998</updated>
       <workItem from="1728997707030" duration="53000" />
+      <workItem from="1731414204308" duration="11000" />
     </task>
     <servers />
   </component>
