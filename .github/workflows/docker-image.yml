@@ -18,7 +18,7 @@ jobs:
           distribution: adopt
       
       - name: Build, test and package project
-        working-directory: ./politieke-partijen
+        working-directory: ./Belgische-regering/politieke-partijen
         run: mvn package -B
 
       - name: Docker login
@@ -44,7 +44,7 @@ jobs:
           distribution: adopt
 
       - name: Build, test and package project
-        working-directory: ./ministers
+        working-directory: ./Belgische-regering/ministers
         run: mvn package -B
 
       - name: Docker login
@@ -70,7 +70,7 @@ jobs:
           distribution: adopt
         
       - name: Build, test and package project
-        working-directory: ./regeringen
+        working-directory: ./Belgische-regering/regeringen
         run: mvn package -B
         
       - name: Docker login
@@ -96,7 +96,7 @@ jobs:
           distribution: adopt
         
       - name: Build, test and package project
-        working-directory: ./partijlid-service
+        working-directory: ./Belgische-regering/partijlid-service
         run: mvn package -B
         
       - name: Docker login
