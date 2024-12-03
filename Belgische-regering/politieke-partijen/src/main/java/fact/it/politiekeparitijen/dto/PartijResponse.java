@@ -1,22 +1,15 @@
-package fact.it.politiekeparitijen.model;
+package fact.it.politiekeparitijen.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Entity
-@Table(name = "mongo-partij")
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class partij {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long partijId;
+@Builder
+public class PartijResponse {
 
     private String partijNaam;
     private String adres;

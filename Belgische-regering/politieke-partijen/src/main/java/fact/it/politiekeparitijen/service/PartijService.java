@@ -1,28 +1,26 @@
 package fact.it.politiekeparitijen.service;
 
 
-import fact.it.politiekeparitijen.dto.partijResponse;
-import fact.it.politiekeparitijen.model.partij;
-import fact.it.politiekeparitijen.repository.partijRepository;
+import fact.it.politiekeparitijen.dto.PartijResponse;
+import fact.it.politiekeparitijen.model.Partij;
+import fact.it.politiekeparitijen.repository.PartijRepository;
 import jakarta.annotation.PostConstruct;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.sql.Struct;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class partijService {
+public class PartijService {
 
-    private final partijRepository partijrepository;
+    private final PartijRepository partijrepository;
 
     @PostConstruct
     public void loadData() {
         System.out.println(partijrepository.count());
         if(partijrepository.count() <= 0){
-            partij partij1 = new partij();
+            Partij partij1 = new Partij();
             partij1.setPartijNaam("Vlaams Belang");
             partij1.setAdres("Madouplein 8");
             partij1.setPostCode("1210");
@@ -30,7 +28,7 @@ public class partijService {
             partij1.setCoalitieVlaams(false);
             partij1.setCoalitieFederaal(false);
 
-            partij partij2 = new partij();
+            Partij partij2 = new Partij();
             partij2.setPartijNaam("NVA");
             partij2.setAdres("Koningsstraat 47");
             partij2.setPostCode("1000");
@@ -38,7 +36,7 @@ public class partijService {
             partij2.setCoalitieVlaams(true);
             partij2.setCoalitieFederaal(false);
 
-            partij partij3 = new partij();
+            Partij partij3 = new Partij();
             partij3.setPartijNaam("Open VLD");
             partij3.setAdres("Melsensstraat 34");
             partij3.setPostCode("1000 ");
@@ -46,7 +44,7 @@ public class partijService {
             partij3.setCoalitieVlaams(true);
             partij3.setCoalitieFederaal(true);
 
-            partij partij4 = new partij();
+            Partij partij4 = new Partij();
             partij4.setPartijNaam("CD&V");
             partij4.setAdres("Gare Maritime");
             partij4.setPostCode("1000");
@@ -54,7 +52,7 @@ public class partijService {
             partij4.setCoalitieVlaams(true);
             partij4.setCoalitieFederaal(true);
 
-            partij partij5 = new partij();
+            Partij partij5 = new Partij();
             partij5.setPartijNaam("Vooruit");
             partij5.setAdres("Keizerslaan 13");
             partij5.setPostCode("1000");
@@ -62,7 +60,7 @@ public class partijService {
             partij5.setCoalitieVlaams(false);
             partij5.setCoalitieFederaal(true);
 
-            partij partij6 = new partij();
+            Partij partij6 = new Partij();
             partij6.setPartijNaam("Groen");
             partij6.setAdres("Van Orleystraat 5-11");
             partij6.setPostCode("1000");
@@ -70,7 +68,7 @@ public class partijService {
             partij6.setCoalitieVlaams(false);
             partij6.setCoalitieFederaal(true);
 
-            partij partij7 = new partij();
+            Partij partij7 = new Partij();
             partij7.setPartijNaam("PVDA");
             partij7.setAdres("Maurice Lemonnierlaan 171");
             partij7.setPostCode("1000");
@@ -88,4 +86,14 @@ public class partijService {
 
         }
     }
+
+    public List<PartijResponse> getAllPartijen() {
+        return partijrepository.findAll().stream()
+                .map(regering -> PartijResponse.builder()
+                        .partijNaam(regering.getPartijNaam())
+                        .adres(regering.getAdres()) // Example: Map additional fields as needed
+                        .build())
+                .toList();
+    }
+
 }
