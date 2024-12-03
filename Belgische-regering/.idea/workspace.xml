@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d08fdd6-cc24-440a-8e51-91f3ddc6d4df" name="Changes" comment="" />
+    <list default="true" id="8d08fdd6-cc24-440a-8e51-91f3ddc6d4df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ministers/src/main/java/fact/it/ministers/dto/MinisterResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ministers/src/main/java/fact/it/ministers/model/Minister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/RegeringenApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/RegeringenApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/controller/RegeringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/controller/RegeringController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/dtos/RegeringResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/dtos/RegeringResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/model/Regering.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/model/Regering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/repository/RegeringRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/repository/RegeringRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/service/RegeringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/service/RegeringService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Regeringen/src/test/java/fact/it/regeringen/RegeringenApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/test/java/fact/it/regeringen/RegeringenApplicationTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +35,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -23,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Jorrit Geurts/Documents/School/Jaar3/Semester1/APT/Project/Belgische-regering/politieke-partijen",
+    "last_opened_file_path": "C:/Users/Jorrit Geurts/Documents/School/Jaar3/Semester1/APT/Project/Belgische-regering/ministers",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -48,6 +77,7 @@
       <updated>1728997705998</updated>
       <workItem from="1728997707030" duration="53000" />
       <workItem from="1731414204308" duration="11000" />
+      <workItem from="1733231658978" duration="56000" />
     </task>
     <servers />
   </component>
