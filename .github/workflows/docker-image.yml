@@ -19,7 +19,6 @@ jobs:
       
       - name: Build, test and package project
         working-directory: ./Belgische-regering/politieke-partijen
-        run: mvn package -B
 
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
