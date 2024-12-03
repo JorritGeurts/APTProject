@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PartijlidResponse {
-    private Long id;
     private String naam;
     private String telefoonnummer;
-    private String partijNaam;  // Derived from the `Partij` entity
-    private String regeringNaam;  // Derived from the `Regering` entity
+/*    private String partijNaam;  // Derived from the `Partij` entity
+    private String regeringNaam;  // Derived from the `Regering` entity*/
 }
