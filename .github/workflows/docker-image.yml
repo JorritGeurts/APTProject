@@ -25,7 +25,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/politieke-partijen:latest ./politieke-partijen
+        run: docker build -t ${{ secrets.DOCKER_USER }}/politieke-partijen:latest ./Belgische-regering/politieke-partijen
 
       - name: Upload container to Docker Hub with Push
         run: docker push ${{ secrets.DOCKER_USER }}/politieke-partijen:latest
@@ -51,7 +51,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/ministers:latest ./ministers
+        run: docker build -t ${{ secrets.DOCKER_USER }}/ministers:latest ./Belgische-regering/ministers
 
       - name: Upload container to Docker Hub with Push
         run: docker push ${{ secrets.DOCKER_USER }}/ministers:latest
@@ -77,7 +77,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/regeringen:latest ./regeringen
+        run: docker build -t ${{ secrets.DOCKER_USER }}/regeringen:latest ./Belgische-regering/regeringen
 
       - name: Upload container to Docker Hub with Push
         run: docker push ${{ secrets.DOCKER_USER }}/regeringen:latest
@@ -103,7 +103,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/partijlid-service:latest ./partijlid-service
+        run: docker build -t ${{ secrets.DOCKER_USER }}/partijlid-service:latest ./Belgische-regering/partijlid-service
 
       - name: Upload container to Docker Hub with Push
         run: docker push ${{ secrets.DOCKER_USER }}/partijlid-service:latest
