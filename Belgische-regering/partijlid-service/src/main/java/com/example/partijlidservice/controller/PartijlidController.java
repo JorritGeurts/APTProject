@@ -16,11 +16,11 @@ public class PartijlidController {
 
     private final PartijlidService partijlidService;
 
-    @GetMapping("/{id}")
+    /*@GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public PartijlidResponse getPartijlidById(@PathVariable Long id) {
         return partijlidService.getPartijlidById(id);
-    }
+    }*/
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
