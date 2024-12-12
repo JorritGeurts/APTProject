@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RegeringResponse {
     private String id;
-    private String name;
+    private String naam;
 }

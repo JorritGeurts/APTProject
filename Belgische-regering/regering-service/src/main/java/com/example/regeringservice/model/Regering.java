@@ -13,5 +13,5 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 public class Regering {
     private String id;
-    private String name;
+    private String naam;
 }

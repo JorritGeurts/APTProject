@@ -19,11 +19,11 @@ public class RegeringService {
     public void loadData() {
         if (regeringRepository.count() <= 0) {
             Regering regering1 = Regering.builder()
-                    .name("Federaal")
+                    .naam("Federaal")
                     .build();
 
             Regering regering2 = Regering.builder()
-                    .name("Vlaams")
+                    .naam("Vlaams")
                     .build();
 
             regeringRepository.save(regering1);
@@ -40,7 +40,7 @@ public class RegeringService {
     private RegeringResponse mapToProductResponse(Regering regering) {
         return RegeringResponse.builder()
                 .id(regering.getId())
-                .name(regering.getName())
+                .naam(regering.getNaam())
                 .build();
     }
 
@@ -50,7 +50,7 @@ public class RegeringService {
                 .orElseThrow(() -> new IllegalArgumentException("Regering not found with id: " + id));
 
         // Update the fields
-        existingRegering.setName(request.getName());
+        existingRegering.setNaam(request.getNaam());
 
         // Save the updated entity
         regeringRepository.save(existingRegering);
