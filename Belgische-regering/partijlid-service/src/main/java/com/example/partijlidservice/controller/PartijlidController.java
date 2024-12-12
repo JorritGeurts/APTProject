@@ -16,7 +16,7 @@ public class PartijlidController {
 
     private final PartijlidService partijlidService;
 
-    @PutMapping("/edit/{id}")
+    @PutMapping("/{id}/edit")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void editPartijlid(@PathVariable long id, @RequestBody PartijlidRequest partijlidRequest) {
         partijlidService.editPartijlid(id, partijlidRequest);

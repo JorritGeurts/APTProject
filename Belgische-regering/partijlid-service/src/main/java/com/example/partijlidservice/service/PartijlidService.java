@@ -20,89 +20,103 @@ public class PartijlidService {
     @PostConstruct
     public void loadData() {
         if (partijlidRepository.count() <= 0) {
-            Partijlid partijlid1 = new Partijlid();
-            partijlid1.setNaam("Bart De Wever");
-            partijlid1.setEmail("bart.dewever@n-va.be");
-            partijlid1.setPartijNaam("NVA");
-            partijlid1.setRegeringNaam("Federaal");
+            Partijlid partijlid1 = Partijlid.builder()
+                    .naam("Bart De Wever")
+                    .email("bart.dewever@n-va.be")
+                    .partijNaam("NVA")
+                    .regeringNaam("Federaal")
+                    .build();
 
-            Partijlid partijlid2 = new Partijlid();
-            partijlid2.setNaam("Tom Van Grieken");
-            partijlid2.setEmail("tom.vangrieken@vlaamsbelang.org");
-            partijlid2.setPartijNaam("Vlaams Belang");
-            partijlid2.setRegeringNaam("Federaal");
+            Partijlid partijlid2 = Partijlid.builder()
+                    .naam("Tom Van Grieken")
+                    .email("tom.vangrieken@vlaamsbelang.org")
+                    .partijNaam("Vlaams Belang")
+                    .regeringNaam("Federaal")
+                    .build();
 
-            Partijlid partijlid3 = new Partijlid();
-            partijlid3.setNaam("Alexander De Croo");
-            partijlid3.setEmail("alexander.decroo@premier.fed.be");
-            partijlid3.setPartijNaam("Open VLD");
-            partijlid3.setRegeringNaam("Federaal");
+            Partijlid partijlid3 = Partijlid.builder()
+                    .naam("Alexander De Croo")
+                    .email("alexander.decroo@premier.fed.be")
+                    .partijNaam("Open VLD")
+                    .regeringNaam("Federaal")
+                    .build();
 
-            Partijlid partijlid4 = new Partijlid();
-            partijlid4.setNaam("Vincent Van Pethegem");
-            partijlid4.setEmail("info@vincent.minfin.be");
-            partijlid4.setPartijNaam("CD&V");
-            partijlid4.setRegeringNaam("Federaal");
+            Partijlid partijlid4 = Partijlid.builder()
+                    .naam("Vincent Van Pethegem")
+                    .email("info@vincent.minfin.be")
+                    .partijNaam("CD&V")
+                    .regeringNaam("Federaal")
+                    .build();
 
-            Partijlid partijlid5 = new Partijlid();
-            partijlid5.setNaam("Frank Vandenbroucke");
-            partijlid5.setEmail("info@vandenbroucke.fed.be");
-            partijlid5.setPartijNaam("Vooruit");
-            partijlid5.setRegeringNaam("Federaal");
+            Partijlid partijlid5 = Partijlid.builder()
+                    .naam("Frank Vandenbroucke")
+                    .email("info@vandenbroucke.fed.be")
+                    .partijNaam("Vooruit")
+                    .regeringNaam("Federaal")
+                    .build();
 
-            Partijlid partijlid6 = new Partijlid();
-            partijlid6.setNaam("Petra De Sutter");
-            partijlid6.setEmail("info@desutter.fed.be.");
-            partijlid6.setPartijNaam("Groen");
-            partijlid6.setRegeringNaam("Federaal");
+            Partijlid partijlid6 = Partijlid.builder()
+                    .naam("Petra De Sutter")
+                    .email("info@desutter.fed.be.")
+                    .partijNaam("Groen")
+                    .regeringNaam("Federaal")
+                    .build();
 
-            Partijlid partijlid7 = new Partijlid();
-            partijlid7.setNaam("Raoul Hedebouw");
-            partijlid7.setEmail("raoul.hedebouw@ptb.be");
-            partijlid7.setPartijNaam("PVDA");
-            partijlid7.setRegeringNaam("Federaal");
+            Partijlid partijlid7 = Partijlid.builder()
+                    .naam("Raoul Hedebouw")
+                    .email("raoul.hedebouw@ptb.be")
+                    .partijNaam("PVDA")
+                    .regeringNaam("Federaal")
+                    .build();
 
-            Partijlid partijlid8 = new Partijlid();
-            partijlid8.setNaam("Jan Jambon");
-            partijlid8.setEmail("jan.jambon@n-va.be");
-            partijlid8.setPartijNaam("NVA");
-            partijlid8.setRegeringNaam("Vlaams");
+            Partijlid partijlid8 = Partijlid.builder()
+                    .naam("Jan Jambon")
+                    .email("jan.jambon@n-va.be")
+                    .partijNaam("NVA")
+                    .regeringNaam("Vlaams")
+                    .build();
 
-            Partijlid partijlid9 = new Partijlid();
-            partijlid9.setNaam("Chris Janssens");
-            partijlid9.setEmail("chris.janssens@vlaamsbelang.org");
-            partijlid9.setPartijNaam("Vlaams Belang");
-            partijlid9.setRegeringNaam("Vlaams");
+            Partijlid partijlid9 = Partijlid.builder()
+                    .naam("Chris Janssens")
+                    .email("chris.janssens@vlaamsbelang.org")
+                    .partijNaam("Vlaams Belang")
+                    .regeringNaam("Vlaams")
+                    .build();
 
-            Partijlid partijlid10 = new Partijlid();
-            partijlid10.setNaam("Gwendolyn Rutten");
-            partijlid10.setEmail("gwendolyn.rutten@aarschot.be");
-            partijlid10.setPartijNaam("Open VLD");
-            partijlid10.setRegeringNaam("Vlaams");
+            Partijlid partijlid10 = Partijlid.builder()
+                    .naam("Gwendolyn Rutten")
+                    .email("gwendolyn.rutten@aarschot.be")
+                    .partijNaam("Open VLD")
+                    .regeringNaam("Vlaams")
+                    .build();
 
-            Partijlid partijlid11 = new Partijlid();
-            partijlid11.setNaam("Wouter Beke");
-            partijlid11.setEmail("info@wouterbeke.be");
-            partijlid11.setPartijNaam("CD&V");
-            partijlid11.setRegeringNaam("Vlaams");
+            Partijlid partijlid11 = Partijlid.builder()
+                    .naam("Wouter Beke")
+                    .email("info@wouterbeke.be")
+                    .partijNaam("CD&V")
+                    .regeringNaam("Vlaams")
+                    .build();
 
-            Partijlid partijlid12 = new Partijlid();
-            partijlid12.setNaam("Conner Rouseau");
-            partijlid12.setEmail("conner.rousseau@vooruit.be");
-            partijlid12.setPartijNaam("Vooruit");
-            partijlid12.setRegeringNaam("Vlaams");
+            Partijlid partijlid12 = Partijlid.builder()
+                    .naam("Conner Rouseau")
+                    .email("conner.rousseau@vooruit.be")
+                    .partijNaam("Vooruit")
+                    .regeringNaam("Vlaams")
+                    .build();
 
-            Partijlid partijlid13 = new Partijlid();
-            partijlid13.setNaam("Jeremie Vaneeckhout");
-            partijlid13.setEmail("jeremie.vaneeckhout@vlaamsparlement.be");
-            partijlid13.setPartijNaam("Groen");
-            partijlid13.setRegeringNaam("Vlaams");
+            Partijlid partijlid13 = Partijlid.builder()
+                    .naam("Jeremie Vaneeckhout")
+                    .email("jeremie.vaneeckhout@vlaamsparlement.be")
+                    .partijNaam("Groen")
+                    .regeringNaam("Vlaams")
+                    .build();
 
-            Partijlid partijlid14 = new Partijlid();
-            partijlid14.setNaam("Jos D'Haese");
-            partijlid14.setEmail("jos.dhaese@vlaamsparlement.be");
-            partijlid14.setPartijNaam("PVDA");
-            partijlid14.setRegeringNaam("Vlaams");
+            Partijlid partijlid14 = Partijlid.builder()
+                    .naam("Jos D'Haese")
+                    .email("jos.dhaese@vlaamsparlement.be")
+                    .partijNaam("PVDA")
+                    .regeringNaam("Vlaams")
+                    .build();
 
             partijlidRepository.save(partijlid1);
             partijlidRepository.save(partijlid2);
@@ -129,11 +143,12 @@ public class PartijlidService {
                 .toList();
     }
     public void createPartijlid(PartijlidRequest partijlidRequest) {
-        Partijlid partijlid = new Partijlid();
-        partijlid.setNaam(partijlidRequest.getNaam());
-        partijlid.setEmail(partijlidRequest.getEmail());
-        partijlid.setPartijNaam(partijlidRequest.getPartijNaam());
-        partijlid.setRegeringNaam(partijlidRequest.getRegeringNaam());
+        Partijlid partijlid = Partijlid.builder()
+                .naam(partijlidRequest.getNaam())
+                .email(partijlidRequest.getEmail())
+                .partijNaam(partijlidRequest.getPartijNaam())
+                .regeringNaam(partijlidRequest.getRegeringNaam())
+                .build();
 
         partijlidRepository.save(partijlid);
     }
