@@ -29,11 +29,11 @@ public class RegeringServiceUnitTest {
         // Arrange
         String regeringId = "1";
         RegeringRequest editRequest = new RegeringRequest();
-        editRequest.setName("Edited Regering Name");
+        editRequest.setNaam("Edited Regering Name");
 
         Regering existingRegering = new Regering();
         existingRegering.setId(regeringId);
-        existingRegering.setName("Original Regering Name");
+        existingRegering.setNaam("Original Regering Name");
 
         when(regeringRepository.findById(regeringId)).thenReturn(Optional.of(existingRegering));
 
@@ -41,7 +41,7 @@ public class RegeringServiceUnitTest {
         regeringService.editRegering(regeringId, editRequest);
 
         // Assert
-        assertEquals("Edited Regering Name", existingRegering.getName(), "The name should be updated to the new value");
+        assertEquals("Edited Regering Name", existingRegering.getNaam(), "The name should be updated to the new value");
 
         // Verify
         verify(regeringRepository, times(1)).save(existingRegering);
