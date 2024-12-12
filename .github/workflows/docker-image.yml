@@ -5,7 +5,7 @@ on: push
 jobs:
   partijenservice:
     runs-on: ubuntu-latest
-    name: partijService
+    name: partij-service
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -18,7 +18,7 @@ jobs:
           distribution: adopt
       
       - name: Build, test and package project
-        working-directory: ./Belgische-regering/politieke-partijen
+        working-directory: ./Belgische-regering/partij-service
         run: mvn package -B
 
       - name: Docker login
@@ -31,7 +31,7 @@ jobs:
         run: docker push ${{ secrets.DOCKER_USER }}/politieke-partijen:latest
   ministerservice:
     runs-on: ubuntu-latest
-    name: MinisterService
+    name: minister-service
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -44,7 +44,7 @@ jobs:
           distribution: adopt
 
       - name: Build, test and package project
-        working-directory: ./Belgische-regering/ministers
+        working-directory: ./Belgische-regering/minister-service
         run: mvn package -B
 
       - name: Docker login
@@ -57,7 +57,7 @@ jobs:
         run: docker push ${{ secrets.DOCKER_USER }}/ministers:latest
   regeringenservice:
     runs-on: ubuntu-latest
-    name: RegeringService
+    name: regering-service
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -70,7 +70,7 @@ jobs:
           distribution: adopt
         
       - name: Build, test and package project
-        working-directory: ./Belgische-regering/regeringen
+        working-directory: ./Belgische-regering/regering-service
         run: mvn package -B
         
       - name: Docker login
@@ -83,7 +83,7 @@ jobs:
         run: docker push ${{ secrets.DOCKER_USER }}/regeringen:latest
   partijlidservice:
     runs-on: ubuntu-latest
-    name: partijlidService
+    name: partijlid-service
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
