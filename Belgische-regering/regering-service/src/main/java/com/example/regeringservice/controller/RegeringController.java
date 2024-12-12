@@ -16,11 +16,11 @@ public class RegeringController {
 
     private final RegeringService regeringService;
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/edit")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void editRegering(@PathVariable String id, @RequestParam String name) {
+    public void editRegering(@PathVariable String id, @RequestParam String naam) {
         // Create the RegeringRequest object directly with the query parameter
-        RegeringRequest request = new RegeringRequest(name);
+        RegeringRequest request = new RegeringRequest(naam);
         // Call the service to edit the Regering
         regeringService.editRegering(id, request);
     }
