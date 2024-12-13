@@ -175,13 +175,22 @@ public class PartijlidService {
         Partijlid existingPartijlid = partijlidRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Partijlid not found with id: " + id));
 
-        existingPartijlid.setNaam(editPartijlidRequest.getNaam());
-        existingPartijlid.setEmail(editPartijlidRequest.getEmail());
-        existingPartijlid.setPartijNaam(editPartijlidRequest.getPartijNaam());
-        existingPartijlid.setRegeringNaam(editPartijlidRequest.getRegeringNaam());
+        if (editPartijlidRequest.getNaam() != null) {
+            existingPartijlid.setNaam(editPartijlidRequest.getNaam());
+        }
+        if (editPartijlidRequest.getEmail() != null) {
+            existingPartijlid.setEmail(editPartijlidRequest.getEmail());
+        }
+        if (editPartijlidRequest.getPartijNaam() != null) {
+            existingPartijlid.setPartijNaam(editPartijlidRequest.getPartijNaam());
+        }
+        if (editPartijlidRequest.getRegeringNaam() != null) {
+            existingPartijlid.setRegeringNaam(editPartijlidRequest.getRegeringNaam());
+        }
 
         partijlidRepository.save(existingPartijlid);
     }
+
 
     public void deletePartijlid(long id) {
         if (!partijlidRepository.existsById(id)) {

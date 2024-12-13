@@ -2,31 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d08fdd6-cc24-440a-8e51-91f3ddc6d4df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ministers/src/main/java/fact/it/ministers/dto/MinisterResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ministers/src/main/java/fact/it/ministers/model/Minister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/RegeringenApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/RegeringenApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/controller/RegeringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/controller/RegeringController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/dtos/RegeringResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/dtos/RegeringResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/model/Regering.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/model/Regering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/repository/RegeringRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/repository/RegeringRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/java/fact/it/regeringen/service/RegeringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/java/fact/it/regeringen/service/RegeringService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Regeringen/src/test/java/fact/it/regeringen/RegeringenApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/regeringen/src/test/java/fact/it/regeringen/RegeringenApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/controller/RegeringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/controller/RegeringController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/dto/RegeringRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/dto/RegeringRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/dto/RegeringResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/dto/RegeringResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/model/Regering.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/model/Regering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/service/RegeringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/service/RegeringService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/regering-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/regering-service/src/test/java/com/example/regeringservice/RegeringServiceUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/test/java/com/example/regeringservice/RegeringServiceUnitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +19,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Van-haecke-Arno&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JorritGeurts/APTProject.git&quot;,
+    &quot;accountId&quot;: &quot;54a00539-3aa7-471a-90fc-d3a8a4e577eb&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -51,8 +46,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "avh-partij-lid-service",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Jorrit Geurts/Documents/School/Jaar3/Semester1/APT/Project/Belgische-regering/ministers",
+    "last_opened_file_path": "C:/Users/arnov/Documents/2024-2025/Semester 1/Advanced Programming Topics/APTProject/Belgische-regering/partij-service",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -63,7 +59,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -78,6 +75,8 @@
       <workItem from="1728997707030" duration="53000" />
       <workItem from="1731414204308" duration="11000" />
       <workItem from="1733231658978" duration="56000" />
+      <workItem from="1733996760915" duration="168000" />
+      <workItem from="1734003074531" duration="106000" />
     </task>
     <servers />
   </component>

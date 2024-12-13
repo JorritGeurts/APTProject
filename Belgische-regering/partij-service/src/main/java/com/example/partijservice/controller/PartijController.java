@@ -21,9 +21,9 @@ public class PartijController {
         return partijService.getAllPartijen();
     }
 
-    @GetMapping("/by-name")
+    @GetMapping("/naam/{naam}")
     @ResponseStatus(HttpStatus.OK)
-    public PartijResponse getPartijByNaam(@RequestParam String naam) {
+    public PartijResponse getPartijlidByNaam(@PathVariable String naam) {
         return partijService.getPartijByNaam(naam);
     }
 }
