@@ -25,10 +25,10 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/politieke-partijen:latest ./Belgische-regering/politieke-partijen
+        run: docker build -t ${{ secrets.DOCKER_USER }}/partij-service:latest ./Belgische-regering/partij-service
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/politieke-partijen:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/partij-service:latest
   ministerservice:
     runs-on: ubuntu-latest
     name: minister-service
@@ -51,10 +51,10 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/ministers:latest ./Belgische-regering/ministers
+        run: docker build -t ${{ secrets.DOCKER_USER }}/minister-service:latest ./Belgische-regering/minister-service
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/ministers:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/minister-service:latest
   regeringenservice:
     runs-on: ubuntu-latest
     name: regering-service
@@ -77,10 +77,10 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/regeringen:latest ./Belgische-regering/regeringen
+        run: docker build -t ${{ secrets.DOCKER_USER }}/regering-service:latest ./Belgische-regering/regering-service
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/regeringen:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/regering-service:latest
   partijlidservice:
     runs-on: ubuntu-latest
     name: partijlid-service
