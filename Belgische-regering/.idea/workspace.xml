@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d08fdd6-cc24-440a-8e51-91f3ddc6d4df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/controller/RegeringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/controller/RegeringController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/dto/RegeringRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/dto/RegeringRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/dto/RegeringResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/dto/RegeringResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/model/Regering.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/model/Regering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/service/RegeringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/java/com/example/regeringservice/service/RegeringService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regering-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regering-service/src/test/java/com/example/regeringservice/RegeringServiceUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/regering-service/src/test/java/com/example/regeringservice/RegeringServiceUnitTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="8d08fdd6-cc24-440a-8e51-91f3ddc6d4df" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,9 +40,13 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "avh-partij-lid-service",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/arnov/Documents/2024-2025/Semester 1/Advanced Programming Topics/APTProject/Belgische-regering/partij-service",
+    "last_opened_file_path": "C:/Users/arnov/Documents/2024-2025/Semester 1/Advanced Programming Topics/APTProject/Belgische-regering",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -77,6 +75,7 @@
       <workItem from="1733231658978" duration="56000" />
       <workItem from="1733996760915" duration="168000" />
       <workItem from="1734003074531" duration="106000" />
+      <workItem from="1734099673287" duration="359000" />
     </task>
     <servers />
   </component>

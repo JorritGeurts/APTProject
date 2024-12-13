@@ -149,22 +149,23 @@ public class PartijlidUnitTest {
 
     @Test
     void testDeletePartijlid() {
+        long partijlidId = 1L;
         // Setup: create a Partijlid object to be deleted.
         Partijlid partijlidToDelete = Partijlid.builder()
-                .id(1L)  // Setting the ID for the partijlid
+                .id(partijlidId)  // Setting the ID for the partijlid
                 .build();  // Building the Partijlid object.
 
         // Mock behavior of the repository
-        when(partijlidRepository.existsById(1L)).thenReturn(true);
+        when(partijlidRepository.existsById(partijlidId)).thenReturn(true);
 
         // Call the service method that you want to test
-        partijlidService.deletePartijlid(1L);
+        partijlidService.deletePartijlid(partijlidId);
 
         // Verify that the repository's deleteById method was called once with the correct ID
-        verify(partijlidRepository, times(1)).deleteById(1L);  // Corrected to match actual interaction
+        verify(partijlidRepository, times(1)).deleteById(partijlidId);  // Corrected to match actual interaction
 
         // You could add additional assertions if necessary
         // For example: verify if no other repository methods were called
-        verify(partijlidRepository, times(1)).existsById(1L);
+        verify(partijlidRepository, times(1)).existsById(partijlidId);
     }
 }
