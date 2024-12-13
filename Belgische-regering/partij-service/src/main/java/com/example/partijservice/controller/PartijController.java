@@ -23,7 +23,7 @@ public class PartijController {
 
     @GetMapping("/naam/{naam}")
     @ResponseStatus(HttpStatus.OK)
-    public PartijResponse getPartijlidByNaam(@PathVariable String naam) {
+    public PartijResponse getPartijByNaam(@PathVariable String naam) {
         return partijService.getPartijByNaam(naam);
     }
 }
