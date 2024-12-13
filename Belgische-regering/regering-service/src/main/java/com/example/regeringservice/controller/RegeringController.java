@@ -18,7 +18,7 @@ public class RegeringController {
 
     @PutMapping("/{id}/edit")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void editAppointment(@PathVariable String id, @RequestBody RegeringRequest regeringRequest) {
+    public void editRegering(@PathVariable String id, @RequestBody RegeringRequest regeringRequest) {
         regeringService.editRegering(id,regeringRequest);
     }
 
