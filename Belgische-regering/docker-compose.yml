@@ -36,7 +36,7 @@ services:
  regering-service:
   depends_on:
     - mongo-regering
-  image: jorritgeurts/regeringen
+  image: jorritgeurts/regering-service:latest
   ports:
     - 8080:8080
   links:
@@ -48,7 +48,7 @@ services:
  partij-service:
   depends_on:
     - mongo-partij
-  image: jorritgeurts/politieke-partijen
+  image: jorritgeurts/partij-service:latest
   ports:
     - 8082:8082
   links:
@@ -60,7 +60,7 @@ services:
  minister-service:
   depends_on:
     - mysql-minister
-  image: jorritgeurts/ministers
+  image: jorritgeurts/minister-service:latest
   ports:
     - 8084:8084
   links:
@@ -69,14 +69,14 @@ services:
    MYSQL_DB_USERNAME: root
    MYSQL_DB_PASSWORD: abc123
    MYSQL_DB_HOST: mysql-partijlid
-   MYSQL_DB_PORT: 3307
+   MYSQL_DB_PORT: 3306
 
  partijlid-service:
   depends_on:
     - regering-service
     - partij-service
     - minister-service
-  image: jorritgeurts/partijlid-service
+  image: jorritgeurts/partijlid-service:latest
   ports:
     - 8081:8081
   links:
@@ -90,7 +90,7 @@ services:
    MYSQL_DB_USERNAME: root
    MYSQL_DB_PASSWORD: abc123
    MYSQL_DB_HOST: mysql-partijlid
-   MYSQL_DB_PORT: 3308
+   MYSQL_DB_PORT: 3306
 
 volumes:
  mongodb_partij_data:
