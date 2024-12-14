@@ -27,4 +27,10 @@ public class RegeringController {
     public List<RegeringResponse> getAllRegeringen() {
         return regeringService.getAllRegeringen();
     }
+
+    @GetMapping("/naam/{naam}")
+    @ResponseStatus(HttpStatus.OK)
+    public RegeringResponse getRegeringByNaam(@PathVariable String naam) {
+        return regeringService.getRegeringByNaam(naam);
+    }
 }

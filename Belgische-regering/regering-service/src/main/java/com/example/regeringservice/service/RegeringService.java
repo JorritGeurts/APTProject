@@ -37,6 +37,13 @@ public class RegeringService {
         return regeringen.stream().map(this::mapToProductResponse).toList();
     }
 
+    public RegeringResponse getRegeringByNaam(String naam) {
+        Regering regering = regeringRepository.findByNaam(naam)
+                .orElseThrow(() -> new IllegalArgumentException("Partij not found with name: " + naam));
+
+        return mapToProductResponse(regering);
+    }
+
     private RegeringResponse mapToProductResponse(Regering regering) {
         return RegeringResponse.builder()
                 .id(regering.getId())
