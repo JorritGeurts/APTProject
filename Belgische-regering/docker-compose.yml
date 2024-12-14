@@ -92,6 +92,18 @@ services:
    MYSQL_DB_HOST: mysql-partijlid
    MYSQL_DB_PORT: 3306
 
+ api-gateway:
+  depends_on:
+    - partijlid-service
+  image: jorritgeurts/br-api-gateway:latest
+  ports:
+    - 8083:8083
+  links:
+    - partijlid-service
+  environment:
+   PARTIJLID_SERVICE_BASEURL: partijlid-service:8081
+
+
 volumes:
  mongodb_partij_data:
  mongodb_regering_data:
