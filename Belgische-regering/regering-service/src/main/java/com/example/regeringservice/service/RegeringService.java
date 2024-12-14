@@ -50,19 +50,4 @@ public class RegeringService {
                 .naam(regering.getNaam())
                 .build();
     }
-
-    public void editRegering(String id, RegeringRequest request) {
-        // Find the existing Regering by ID
-        Regering existingRegering = regeringRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Regering not found with id: " + id));
-
-        // Check and update the fields if they are not null
-        if (request.getNaam() != null) {
-            existingRegering.setNaam(request.getNaam());
-        }
-        // Add more fields if necessary, e.g., if there are other fields in the RegeringRequest
-
-        // Save the updated entity
-        regeringRepository.save(existingRegering);
-    }
 }
