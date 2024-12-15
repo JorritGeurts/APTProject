@@ -50,7 +50,7 @@ spring:
             - Path=/partij/{naam}
             - Method=GET
           filters:
-            - SetPath=/api/partij/naam/{name}
+            - SetPath=/api/partij/naam/{naam}
         - id: regering-service-all
           uri: http://${REGERING_SERVICE_BASEURL:localhost:8080}
           predicates:
@@ -64,4 +64,4 @@ spring:
             - Path=/regering/{naam}
             - Method=GET
           filters:
-            - SetPath=/api/regering/naam/{name}
+            - SetPath=/api/regering/naam/{naam}
