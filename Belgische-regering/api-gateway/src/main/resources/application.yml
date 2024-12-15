@@ -25,9 +25,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: partijlid-service
-          uri: http://partijlid-service:8081
+        - id: partijlid-service-all
+          uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
           predicates:
-            - Path=/api/partijlid/**
+            - Path=/partijlid
+            - Method=GET
           filters:
-            - StripPrefix=1
+            - SetPath=/api/partijlid/all
