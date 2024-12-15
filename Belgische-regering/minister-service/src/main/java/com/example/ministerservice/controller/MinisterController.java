@@ -28,6 +28,12 @@ public class MinisterController {
         ministerService.createMinister(ministerRequest);
     }
 
+    @GetMapping("/naam/{naam}")
+    @ResponseStatus(HttpStatus.OK)
+    public MinisterResponse getMinisterByNaam(@PathVariable String naam) {
+        return ministerService.getMinisterByNaam(naam);
+    }
+
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<MinisterResponse> getAllMinisters() {

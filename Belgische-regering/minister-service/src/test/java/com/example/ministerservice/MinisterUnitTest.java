@@ -1,21 +1,25 @@
 package com.example.ministerservice;
 
-import com.example.ministerservice.dto.MinisterRequest;
-import com.example.ministerservice.dto.MinisterResponse;
+import com.example.ministerservice.dto.*;
 import com.example.ministerservice.model.Minister;
 import com.example.ministerservice.repository.MinisterRepository;
 import com.example.ministerservice.service.MinisterService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.util.ReflectionTestUtils;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -27,117 +31,206 @@ public class MinisterUnitTest {
     @Mock
     private MinisterRepository ministerRepository;
 
+    @Mock
+    private WebClient webClient;
+
+    @Mock
+    private WebClient.RequestHeadersUriSpec requestHeadersUriSpec;
+
+    @Mock
+    private WebClient.RequestHeadersSpec requestHeadersSpec;
+
+    @Mock
+    private WebClient.ResponseSpec responseSpec;
+
+    @BeforeEach
+    void setUp() {
+        ReflectionTestUtils.setField(ministerService, "partijlidServiceBaseUrl", "http://localhost:8081");
+        ReflectionTestUtils.setField(ministerService, "regeringServiceBaseUrl", "http://localhost:8080");
+    }
+
     @Test
-    public void testCreateMinister() {
+    public void testCreateMinister_Success() {
         // Arrange
-        MinisterRequest request = new MinisterRequest();
-        request.setNaam("Test Name");
-        request.setPartijlidNaam("Test Party");
-        request.setRegeringNaam("Test Government");
+        MinisterRequest ministerRequest = new MinisterRequest("Test Minister", "TestPartijlid", "TestRegering");
+
+        PartijlidResponse partijlidResponse = PartijlidResponse.builder()
+                .naam("TestPartijlid")
+                .build();
+
+        RegeringResponse regeringResponse = RegeringResponse.builder()
+                .naam("TestRegering")
+                .build();
 
         Minister minister = Minister.builder()
-                .naam(request.getNaam())
-                .partijlidNaam(request.getPartijlidNaam())
-                .regeringNaam(request.getRegeringNaam())
+                .naam("Test Minister")
+                .partijlidNaam("TestPartijlid")
+                .regeringNaam("TestRegering")
                 .build();
 
         when(ministerRepository.save(any(Minister.class))).thenReturn(minister);
+        when(webClient.get()).thenReturn(requestHeadersUriSpec);
+        when(requestHeadersUriSpec.uri(anyString(), anyString())).thenReturn(requestHeadersSpec);
+        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+        when(responseSpec.bodyToMono(PartijlidResponse.class)).thenReturn(Mono.just(partijlidResponse));
+        when(responseSpec.bodyToMono(RegeringResponse.class)).thenReturn(Mono.just(regeringResponse));
 
         // Act
-        ministerService.createMinister(request);
+        ministerService.createMinister(ministerRequest);
 
         // Assert
         verify(ministerRepository, times(1)).save(any(Minister.class));
     }
 
     @Test
-    public void testEditMinister() {
+    public void testGetMinisterByNaam_Success() {
         // Arrange
-        long ministerId = 1L;
-        MinisterRequest editRequest = new MinisterRequest();
-        editRequest.setNaam("Edited Name");
-        editRequest.setPartijlidNaam("Edited Party");
-        editRequest.setRegeringNaam("Edited Government");
+        String naam = "Test Minister";
+        Minister minister = new Minister(1L, naam, "TestPartijlid", "TestRegering");
 
-        Minister existingMinister = Minister.builder()
-                .id(ministerId)
-                .naam("Original Name")
-                .partijlidNaam("Original Party")
-                .regeringNaam("Original Government")
-                .build();
-
-        when(ministerRepository.findById(ministerId)).thenReturn(Optional.of(existingMinister));
+        when(ministerRepository.findByNaam(naam)).thenReturn(Optional.of(minister));
 
         // Act
-        ministerService.editMinister(ministerId, editRequest);
+        MinisterResponse result = ministerService.getMinisterByNaam(naam);
 
         // Assert
-        assertEquals("Edited Name", existingMinister.getNaam());
-        assertEquals("Edited Party", existingMinister.getPartijlidNaam());
-        assertEquals("Edited Government", existingMinister.getRegeringNaam());
-        verify(ministerRepository, times(1)).save(existingMinister);
+        assertNotNull(result);
+        assertEquals(naam, result.getNaam());
+        verify(ministerRepository, times(1)).findByNaam(naam);
     }
 
     @Test
-    public void testGetAllMinisters() {
+    public void testGetMinisterByNaam_Failure() {
         // Arrange
-        Minister minister1 = Minister.builder().id(1L).naam("Name1").partijlidNaam("Party1").regeringNaam("Government1").build();
-        Minister minister2 = Minister.builder().id(2L).naam("Name2").partijlidNaam("Party2").regeringNaam("Government2").build();
+        String naam = "NonExisting Minister";
 
-        when(ministerRepository.findAll()).thenReturn(Arrays.asList(minister1, minister2));
+        when(ministerRepository.findByNaam(naam)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
+            ministerService.getMinisterByNaam(naam);
+        });
+        assertEquals("Minister with naam " + naam + " not found.", thrown.getMessage());
+        verify(ministerRepository, times(1)).findByNaam(naam);
+    }
+
+    @Test
+    public void testEditMinister_Success() {
+        // Arrange
+        long id = 1L;
+        MinisterRequest editRequest = new MinisterRequest("Updated Minister", "UpdatedPartijlid", "UpdatedRegering");
+        Minister existingMinister = new Minister(id, "Test Minister", "TestPartijlid", "TestRegering");
+
+        PartijlidResponse partijlidResponse = PartijlidResponse.builder()
+                .naam("UpdatedPartijlid")
+                .build();
+
+        RegeringResponse regeringResponse = RegeringResponse.builder()
+                .naam("UpdatedRegering")
+                .build();
+
+        when(ministerRepository.findById(id)).thenReturn(Optional.of(existingMinister));
+        when(ministerRepository.save(any(Minister.class))).thenReturn(existingMinister);
+
+        // Mock the WebClient call chain
+        when(webClient.get()).thenReturn(requestHeadersUriSpec);
+        when(requestHeadersUriSpec.uri(anyString(), anyString())).thenReturn(requestHeadersSpec);
+        when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
+        when(responseSpec.bodyToMono(PartijlidResponse.class)).thenReturn(Mono.just(partijlidResponse));
+        when(responseSpec.bodyToMono(RegeringResponse.class)).thenReturn(Mono.just(regeringResponse));
 
         // Act
-        List<MinisterResponse> responseList = ministerService.getAllMinisters();
+        ministerService.editMinister(id, editRequest);
 
         // Assert
-        assertEquals(2, responseList.size());
-        assertEquals("Name1", responseList.get(0).getNaam());
-        assertEquals("Party2", responseList.get(1).getPartijlidNaam());
+        assertEquals("Updated Minister", existingMinister.getNaam());
+        assertEquals("UpdatedPartijlid", existingMinister.getPartijlidNaam());
+        assertEquals("UpdatedRegering", existingMinister.getRegeringNaam());
+
+        // Verify that webClient.get() was called once for each service (twice in total)
+        verify(webClient, times(2)).get(); // Expecting two calls
+        verify(requestHeadersUriSpec, times(2)).uri(anyString(), anyString()); // Verify URI was set for both services
+        verify(requestHeadersSpec, times(2)).retrieve(); // Verify retrieve method is called for both services
+    }
+
+
+
+    @Test
+    public void testDeleteMinister_Success() {
+        // Arrange
+        long id = 1L;
+
+        when(ministerRepository.existsById(id)).thenReturn(true);
+
+        // Act
+        ministerService.deleteMinister(id);
+
+        // Assert
+        verify(ministerRepository, times(1)).deleteById(id);
+    }
+
+    @Test
+    public void testDeleteMinister_Failure() {
+        // Arrange
+        long id = 1L;
+
+        when(ministerRepository.existsById(id)).thenReturn(false);
+
+        // Act & Assert
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
+            ministerService.deleteMinister(id);
+        });
+        assertEquals("Minister with ID " + id + " not found.", thrown.getMessage());
+        verify(ministerRepository, times(0)).deleteById(id);
+    }
+
+    @Test
+    public void testGetAllMinisters_Success() {
+        // Arrange
+        Minister minister1 = new Minister(1L, "Minister One", "TestPartijlid", "TestRegering");
+        Minister minister2 = new Minister(2L, "Minister Two", "TestPartijlid", "TestRegering");
+
+        List<Minister> ministers = Arrays.asList(minister1, minister2);
+        when(ministerRepository.findAll()).thenReturn(ministers);
+
+        // Act
+        List<MinisterResponse> result = ministerService.getAllMinisters();
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(2, result.size());
         verify(ministerRepository, times(1)).findAll();
     }
 
     @Test
-    public void testGetMinisterById() {
+    public void testGetMinisterById_Success() {
         // Arrange
-        long ministerId = 1L;
-        Minister minister = Minister.builder()
-                .id(ministerId)
-                .naam("Test Name")
-                .partijlidNaam("Test Party")
-                .regeringNaam("Test Government")
-                .build();
+        long id = 1L;
+        Minister minister = new Minister(id, "Test Minister", "TestPartijlid", "TestRegering");
 
-        when(ministerRepository.findById(ministerId)).thenReturn(Optional.of(minister));
+        when(ministerRepository.findById(id)).thenReturn(Optional.of(minister));
 
         // Act
-        MinisterResponse response = ministerService.getMinisterById(ministerId);
+        MinisterResponse result = ministerService.getMinisterById(id);
 
         // Assert
-        assertEquals("Test Name", response.getNaam());
-        assertEquals("Test Party", response.getPartijlidNaam());
-        assertEquals("Test Government", response.getRegeringNaam());
-        verify(ministerRepository, times(1)).findById(ministerId);
+        assertNotNull(result);
+        assertEquals(id, result.getId());
+        verify(ministerRepository, times(1)).findById(id);
     }
 
     @Test
-    void testDeleteMinister() {
-        long ministerId = 1L;
-        // Setup: create a Partijlid object to be deleted.
-        Minister ministerToDelete = Minister.builder()
-                .id(ministerId)  // Setting the ID for the partijlid
-                .build();  // Building the Partijlid object.
+    public void testGetMinisterById_Failure() {
+        // Arrange
+        long id = 1L;
 
-        // Mock behavior of the repository
-        when(ministerRepository.existsById(ministerId)).thenReturn(true);
+        when(ministerRepository.findById(id)).thenReturn(Optional.empty());
 
-        // Call the service method that you want to test
-        ministerService.deleteMinister(ministerId);
-
-        // Verify that the repository's deleteById method was called once with the correct ID
-        verify(ministerRepository, times(1)).deleteById(ministerId);  // Corrected to match actual interaction
-
-        // You could add additional assertions if necessary
-        // For example: verify if no other repository methods were called
-        verify(ministerRepository, times(1)).existsById(ministerId);
+        // Act & Assert
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
+            ministerService.getMinisterById(id);
+        });
+        assertEquals("Minister with ID " + id + " not found.", thrown.getMessage());
+        verify(ministerRepository, times(1)).findById(id);
     }
 }
