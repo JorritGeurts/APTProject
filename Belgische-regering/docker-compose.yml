@@ -64,11 +64,11 @@ services:
   ports:
     - 8084:8084
   links:
-    - mysql-partijlid
+    - mysql-minister
   environment:
    MYSQL_DB_USERNAME: root
    MYSQL_DB_PASSWORD: abc123
-   MYSQL_DB_HOST: mysql-partijlid
+   MYSQL_DB_HOST: mysql-minister
    MYSQL_DB_PORT: 3306
 
  partijlid-service:
@@ -102,6 +102,9 @@ services:
     - partijlid-service
   environment:
    PARTIJLID_SERVICE_BASEURL: partijlid-service:8081
+   MINISTER_SERVICE_BASEURL: minister-service:8084
+   PARTIJ_SERVICE_BASEURL: partij-service:8082
+   REGERING_SERVICE_BASEURL: regering-service:8080
 
 
 volumes:
