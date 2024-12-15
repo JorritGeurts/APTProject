@@ -1,6 +1,5 @@
 package com.example.regeringservice.controller;
 
-import com.example.regeringservice.dto.RegeringRequest;
 import com.example.regeringservice.dto.RegeringResponse;
 import com.example.regeringservice.service.RegeringService;
 import lombok.RequiredArgsConstructor;
