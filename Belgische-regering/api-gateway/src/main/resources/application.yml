@@ -25,10 +25,43 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: partijlid-service-all
+        - id: partijlid-service
           uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
           predicates:
             - Path=/partijlid
+          filters:
+            - SetPath=/api/partijlid
+        - id: minister-service
+          uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
+          predicates:
+            - Path=/minister
+          filters:
+            - SetPath=/api/minister
+        - id: partij-service-all
+          uri: http://${PARTIJ_SERVICE_BASEURL:localhost:8084}
+          predicates:
+            - Path=/alle-partijen
             - Method=GET
           filters:
-            - SetPath=/api/partijlid/all
+            - SetPath=/api/partij/all
+        - id: partij-service-naam
+          uri: http://${PARTIJ_SERVICE_BASEURL:localhost:8084}
+          predicates:
+            - Path=/partij
+            - Method=GET
+          filters:
+            - SetPath=/api/partij/naam
+        - id: regering-service-all
+          uri: http://${REGERING_SERVICE_BASEURL:localhost:8080}
+          predicates:
+            - Path=/alle-regeringen
+            - Method=GET
+          filters:
+            - SetPath=/api/regering/all
+        - id: regering-service-naam
+          uri: http://${REGERING_SERVICE_BASEURL:localhost:8080}
+          predicates:
+            - Path=/regering
+            - Method=GET
+          filters:
+            - SetPath=/api/regering/naam
