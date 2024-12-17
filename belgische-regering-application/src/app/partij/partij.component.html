@@ -1,8 +1,14 @@
 @if(partij) {
     <article class="max-w-md mx-auto border-black text-white bg-gray-800 border-4 shadow-lg rounded-lg overflow-hidden p-6 relative">
         <!-- Image positioned in the top-right corner -->
-        <img [src]="getSafeImageFilename(partij.naam)" alt="{{ partij.naam }}" class="absolute top-2 right-2 w-20 h-20 object-cover rounded-full border-2 border-black">
-        
+        <a href="{{ partij.website }}" target="_blank">
+            <img 
+              [src]="getSafeImageFilename(partij.naam)" 
+              alt="{{ partij.naam }}" 
+              class="absolute top-2 right-2 w-20 h-20 object-cover rounded-full border-2 border-black transition-transform duration-300 transform hover:scale-110"
+            >
+        </a>
+
         <!-- Card content -->
         <h1 class="text-3xl font-bold italic mb-4">{{ partij.naam }}</h1>
         <p class="mb-2"><strong>Adres:</strong> {{ partij.adres }}</p>
@@ -10,7 +16,6 @@
         <p class="mb-2"><strong>Stad:</strong> {{ partij.stad }}</p>
         <p class="mb-2"><strong>Coalitie Vlaams:</strong> {{ partij.coalitieVlaams ? 'Ja' : 'Nee' }}</p>
         <p class="mb-2"><strong>Coalitie Federaal:</strong> {{ partij.coalitieFederaal ? 'Ja' : 'Nee' }}</p>
-        <p class="mb-2"><strong>Website:</strong> {{ partij.website }}</p>
     </article>
     
 }
