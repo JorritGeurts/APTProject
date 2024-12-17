@@ -24,6 +24,7 @@ public class PartijService {
                     .stad("Brussel")
                     .coalitieVlaams(false)
                     .coalitieFederaal(false)
+                    .website("https://www.vlaamsbelang.org")
                     .build();
 
             Partij partij2 = Partij.builder()
@@ -33,6 +34,7 @@ public class PartijService {
                     .stad("Brussel")
                     .coalitieVlaams(true)
                     .coalitieFederaal(false)
+                    .website("https://www.n-va.be")
                     .build();
 
             Partij partij3 = Partij.builder()
@@ -42,6 +44,7 @@ public class PartijService {
                     .stad("Brussel")
                     .coalitieVlaams(true)
                     .coalitieFederaal(true)
+                    .website("https://www.openvld.be")
                     .build();
 
             Partij partij4 = Partij.builder()
@@ -51,6 +54,7 @@ public class PartijService {
                     .stad("Brussel")
                     .coalitieVlaams(true)
                     .coalitieFederaal(true)
+                    .website("https://www.cdenv.be")
                     .build();
 
             Partij partij5 = Partij.builder()
@@ -60,6 +64,7 @@ public class PartijService {
                     .stad("Brussel")
                     .coalitieVlaams(false)
                     .coalitieFederaal(true)
+                    .website("https://www.vooruit.org")
                     .build();
 
             Partij partij6 = Partij.builder()
@@ -69,6 +74,7 @@ public class PartijService {
                     .stad("Brussel")
                     .coalitieVlaams(false)
                     .coalitieFederaal(true)
+                    .website("https://www.groen.be")
                     .build();
 
             Partij partij7 = Partij.builder()
@@ -78,6 +84,7 @@ public class PartijService {
                     .stad("Brussel")
                     .coalitieVlaams(false)
                     .coalitieFederaal(false)
+                    .website("https://www.pvda.be")
                     .build();
 
             partijRepository.save(partij1);
@@ -112,6 +119,7 @@ public class PartijService {
                 .stad(partij.getStad())
                 .coalitieVlaams(partij.isCoalitieVlaams())
                 .coalitieFederaal(partij.isCoalitieFederaal())
+                .website(partij.getWebsite())
                 .build();
     }
 }
