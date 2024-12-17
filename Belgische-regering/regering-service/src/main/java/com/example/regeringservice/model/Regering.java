@@ -14,4 +14,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Regering {
     private String id;
     private String naam;
+    private String beschrijving;
+    private String website;
 }
