@@ -20,21 +20,13 @@ public class RegeringService {
         if (regeringRepository.count() <= 0) {
             Regering regering1 = Regering.builder()
                     .naam("Federaal")
-                    .beschrijving("De Belgische federale regering is de uitvoerende macht van België. Ze voert niet alleen de Belgische wetten uit, maar speelt ook een rol bij de wetgevende macht via wetsontwerpen en amendementen.\n" +
-                            "\n" +
-                            "De federale regering bestaat uit ten hoogste 15 ministers. Hiernaast kunnen er ook nog staatssecretarissen worden toegevoegd aan de regering. Deze regering is samengesteld uit evenveel Nederlandstaligen als Franstaligen, eventueel de eerste minister uitgezonderd.\n" +
-                            "\n" +
-                            "De ministers en staatssecretarissen zijn de medewerkers van de koning als hoofd van de uitvoerende macht. Gezien de ministeriële verantwoordelijkheid is de regering het politieke hoofd (niet het juridische) van de uitvoerende macht.\n" +
-                            "\n" +
-                            "Sinds 1944 bevindt de zetel van de federale regering zich in de Wetstraat 16, waar de Ministerraad op vrijdagmorgen bijeenkomt.")
+                    .beschrijving("De Belgische federale regering is de uitvoerende macht van België. Ze voert niet alleen de Belgische wetten uit, maar speelt ook een rol bij de wetgevende macht via wetsontwerpen en amendementen. De federale regering bestaat uit ten hoogste 15 ministers. Hiernaast kunnen er ook nog staatssecretarissen worden toegevoegd aan de regering. Deze regering is samengesteld uit evenveel Nederlandstaligen als Franstaligen, eventueel de eerste minister uitgezonderd.")
                     .website("https://www.belgium.be")
                     .build();
 
             Regering regering2 = Regering.builder()
                     .naam("Vlaams")
-                    .beschrijving("De Vlaamse Regering is de uitvoerende macht van Vlaanderen. De Vlaamse Regering beheert de bevoegdheden van zowel het Vlaams Gewest als de Vlaamse Gemeenschap. Tot voor de Staatshervorming van 1993 heette de regering de Vlaamse Executieve. Het voorbereiden, formuleren en uitvoeren van beleid gebeurt door een reeks ministeries en agentschappen, ingedeeld volgens beleidsdomein.\n" +
-                            "\n" +
-                            "De Vlaamse Regering zetelt aan het Martelarenplein te Brussel. Voor officiële gelegenheden heeft de regering ook de beschikking over het Hotel Errera, een ambtswoning aan de Koningsstraat tegenover het Warandepark en schuin tegenover het Koninklijk Paleis van Brussel.")
+                    .beschrijving("De Vlaamse Regering is de uitvoerende macht van Vlaanderen. De Vlaamse Regering beheert de bevoegdheden van zowel het Vlaams Gewest als de Vlaamse Gemeenschap. Tot voor de Staatshervorming van 1993 heette de regering de Vlaamse Executieve. Het voorbereiden, formuleren en uitvoeren van beleid gebeurt door een reeks ministeries en agentschappen, ingedeeld volgens beleidsdomein.")
                     .website("https://www.vlaamsparlement.be")
                     .build();
 

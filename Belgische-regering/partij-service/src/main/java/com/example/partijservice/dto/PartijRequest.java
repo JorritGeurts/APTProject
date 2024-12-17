@@ -16,5 +16,6 @@ public class PartijRequest {
     private String stad;
     private boolean coalitieVlaams;
     private boolean coalitieFederaal;
+    private String website;
 }
 

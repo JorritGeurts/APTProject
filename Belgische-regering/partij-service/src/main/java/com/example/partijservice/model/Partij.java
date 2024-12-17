@@ -19,4 +19,5 @@ public class Partij {
     private String stad;
     private boolean coalitieVlaams;
     private boolean coalitieFederaal;
+    private String website;
 }

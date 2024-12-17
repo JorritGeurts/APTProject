@@ -38,6 +38,7 @@ public class PartijServiceUnitTest {
         partij1.setStad("Brussel");
         partij1.setCoalitieVlaams(false);
         partij1.setCoalitieFederaal(false);
+        partij1.setWebsite("https://www.vlaamsbelang.org");
 
         Partij partij2 = new Partij();
         partij2.setId("2");
@@ -47,6 +48,7 @@ public class PartijServiceUnitTest {
         partij2.setStad("Brussel");
         partij2.setCoalitieVlaams(true);
         partij2.setCoalitieFederaal(false);
+        partij2.setWebsite("https://www.n-va.be");
 
         // Mock the repository to return the list of Partij objects
         when(partijRepository.findAll()).thenReturn(Arrays.asList(partij1, partij2));
@@ -74,6 +76,7 @@ public class PartijServiceUnitTest {
         partij.setStad("Brussel");
         partij.setCoalitieVlaams(true);
         partij.setCoalitieFederaal(true);
+        partij.setWebsite("https://www.cdenv.be");
 
         // Mock the repository to return the Partij object when searching by name
         when(partijRepository.findByNaam("CD&V")).thenReturn(Optional.of(partij));
