@@ -26,7 +26,7 @@ public class RegeringService {
 
             Regering regering2 = Regering.builder()
                     .naam("Vlaams")
-                    .beschrijving("De Vlaamse Regering is de uitvoerende macht van Vlaanderen. De Vlaamse Regering beheert de bevoegdheden van zowel het Vlaams Gewest als de Vlaamse Gemeenschap. Tot voor de Staatshervorming van 1993 heette de regering de Vlaamse Executieve. Het voorbereiden, formuleren en uitvoeren van beleid gebeurt door een reeks ministeries en agentschappen, ingedeeld volgens beleidsdomein.")
+                    .beschrijving("De Vlaamse Regering is de uitvoerende macht van Vlaanderen. De Vlaamse Regering beheert de bevoegdheden van zowel het Vlaams Gewest als de Vlaamse Gemeenschap. Tot voor de Staatshervorming van 1993 heette de regering de Vlaamse Executieve. Het voorbereiden, formuleren en uitvoeren van beleid gebeurt door een reeks ministeries en agentschappen, ingedeeld volgens beleidsdomein. De Vlaamse Regering zetelt aan het Martelarenplein te Brussel.")
                     .website("https://www.vlaamsparlement.be")
                     .build();
 
