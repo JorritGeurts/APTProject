@@ -28,15 +28,15 @@ spring:
         - id: partijlid-service
           uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
           predicates:
-            - Path=/partijlid
+            - Path=/partijlid/**
           filters:
-            - SetPath=/api/partijlid
+            - SetPath=/api/partijlid${$request.path.substring(10)}
         - id: minister-service
           uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
           predicates:
-            - Path=/minister
+            - Path=/minister/**
           filters:
-            - SetPath=/api/minister
+            - SetPath=/api/minister${$request.path.substring(10)}
         - id: partij-service-all
           uri: http://${PARTIJ_SERVICE_BASEURL:localhost:8082}
           predicates:
