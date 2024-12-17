@@ -1,0 +1,5 @@
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-3 py-6">
+    @for (regering of regeringen$ | async; track $index) {
+    <app-regering [regering]="regering"></app-regering>
+    }
+</div>
