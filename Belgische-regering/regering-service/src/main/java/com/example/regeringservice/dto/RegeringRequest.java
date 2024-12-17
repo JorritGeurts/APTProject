@@ -11,4 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RegeringRequest {
     private String naam;
+    private String beschrijving;
+    private String website;
 }
