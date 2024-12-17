@@ -12,4 +12,6 @@ import lombok.NoArgsConstructor;
 public class RegeringResponse {
     private String id;
     private String naam;
+    private String beschrijving;
+    private String website;
 }
