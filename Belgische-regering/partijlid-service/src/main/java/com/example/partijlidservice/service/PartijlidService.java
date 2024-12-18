@@ -6,6 +6,7 @@ import com.example.partijlidservice.dto.PartijResponse;
 import com.example.partijlidservice.dto.RegeringResponse;
 import com.example.partijlidservice.model.Partijlid;
 import com.example.partijlidservice.repository.PartijlidRepository;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,29 @@ public class PartijlidService {
 
     @Value("${partijservice.baseurl}")
     private String partijServiceBaseUrl;
+
+    @PostConstruct
+    public void loadData() {
+        if (partijlidRepository.count() <= 0) {
+            Partijlid partijlid1 = Partijlid.builder()
+                    .naam("Alexander De Croo")
+                    .email("contact@premier.be")
+                    .partijNaam("Open VLD")
+                    .regeringNaam("Federaal")
+                    .build();
+
+            Partijlid partijlid2 = Partijlid.builder()
+                    .naam("Tom Van Grieken")
+                    .email("tom.vangrieken@vlaamsbelang.org")
+                    .partijNaam("Vlaams Belang")
+                    .regeringNaam("Vlaams")
+                    .build();
+
+
+            partijlidRepository.save(partijlid1);
+            partijlidRepository.save(partijlid2);
+        }
+    }
 
     public List<PartijlidResponse> getAllPartijleden() {
         List<Partijlid> partijliden = partijlidRepository.findAll();
