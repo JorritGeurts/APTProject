@@ -3,8 +3,6 @@ import { Partijlid } from '../interfaces/partijlid';
 import { Observable } from 'rxjs';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -32,14 +30,14 @@ export class PartijlidService {
     return this.httpClient.post<Partijlid>(`${this.apiUrl}/create`, partijlid, {headers: headers, });
   }
 
-  putPartijlid(id: string, stage: Partijlid): Observable<Partijlid> {
+  putPartijlid(id: number, partijlid: Partijlid): Observable<Partijlid> {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.httpClient.put<Partijlid>(`${this.apiUrl}/${id}/edit`, stage, {headers: headers, });
+    return this.httpClient.put<Partijlid>(`${this.apiUrl}/${id}/edit`, partijlid, {headers: headers, });
 
   }
 
-  deletePartijlid(id: string): Observable<Partijlid> {
+  deletePartijlid(id: number): Observable<Partijlid> {
     return this.httpClient.delete<Partijlid>(`${this.apiUrl}/${id}/delete`);
   }
 }

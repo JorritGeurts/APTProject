@@ -1,0 +1,85 @@
+<div class="container mx-auto m-5 overflow-hidden text-white">
+    @if(errorMessage) {
+    <div class="rounded p-4 mb-4 text-lg bg-red text-white border-2 border-black">
+        {{errorMessage}}
+    </div>
+    }
+    <div class="mb-4">
+        <h1 class="text-3xl">Ministers</h1>
+        <div class="flex justify-end">
+            <button class="px-4 py-2 rounded-md text-white hover:text-black bg-red hover:bg-yellow"(click)="add()">Voeg minister toe</button>
+        </div>
+    </div>
+    <div class="overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 text-black">
+        <div class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
+            <table class="min-w-full">
+                <thead>
+                    <tr>
+                        <th
+                            class="px-6 py-3 text-xs font-medium text-left text-gray-500 border-b border-gray-200 bg-gray-50">
+                            #</th>
+                        <th
+                            class="px-6 py-3 text-xs font-medium text-left text-gray-500 border-b border-gray-200 bg-gray-50">
+                            Minister</th>
+                        <th
+                            class="px-6 py-3 text-xs font-medium text-left text-gray-500 border-b border-gray-200 bg-gray-50">
+                            Naam</th>
+                        <th
+                            class="px-6 py-3 text-xs font-medium text-left text-gray-500 border-b border-gray-200 bg-gray-50">
+                            Regering</th>
+                        <th class="px-6 py-3 text-xs text-center text-gray-500 border-b border-gray-200 bg-gray-50">
+                            &nbsp;</th>
+                           
+                    </tr>
+                </thead>
+
+                <tbody class="bg-white">
+                    @for (minister of ministers$ | async; track minister.id) {
+                    <tr>
+                        <td class="px-6 py-4 border-b border-gray-200">
+                            <div class="flex items-center">
+                                {{minister.id}}
+                            </div>
+
+                        </td>
+
+                        <td class="px-6 py-4 border-b border-gray-200">
+                            <div class="text-sm text-gray-900">{{minister.naam}}
+                            </div>
+                        </td>
+
+                        <td class="px-6 py-4 border-b border-gray-200">
+                            <div class="text-sm text-gray-900">{{minister.partijlidNaam}}
+                            </div>
+                        </td>
+
+                        <td class="px-6 py-4 border-b border-gray-200">
+                            <div class="text-sm text-gray-900">{{minister.regeringNaam}}
+                            </div>
+                        </td>
+
+                        <td class="text-sm font-medium border-b border-gray-200">
+                            <div class="flex justify-end gap-4">
+                                <a (click)="edit(minister.id)" class="text-indigo-600 hover:text-indigo-900 cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                    </svg>
+                                </a>
+                                <a (click)="delete(minister.id, minister.naam)" class="mr-0 md:mr-4  cursor-pointer"><svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="w-6 h-6 text-red hover:text-darkred" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg></a>
+                            </div>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
