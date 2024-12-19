@@ -36,8 +36,8 @@ public class PartijlidService {
 
     public void createPartijlid(PartijlidRequest partijlidRequest) {
         // Fetch partij and regering details using names instead of IDs
-        PartijResponse partijResponse = getPartijByName(partijlidRequest.getPartijNaam());
-        RegeringResponse regeringResponse = getRegeringByName(partijlidRequest.getRegeringNaam());
+        //PartijResponse partijResponse = getPartijByName(partijlidRequest.getPartijNaam());
+        //RegeringResponse regeringResponse = getRegeringByName(partijlidRequest.getRegeringNaam());
 
         Partijlid partijlid = Partijlid.builder()
                 .naam(partijlidRequest.getNaam())
