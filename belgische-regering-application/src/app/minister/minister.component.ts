@@ -1,16 +1,16 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Partijlid } from '../interfaces/partijlid';
+import { Minister } from '../interfaces/minister';
 
 @Component({
-  selector: 'app-partijlid',
+  selector: 'app-minister',
   standalone: true,
   imports: [],
-  templateUrl: './partijlid.component.html',
-  styleUrl: './partijlid.component.css'
+  templateUrl: './minister.component.html',
+  styleUrl: './minister.component.css'
 })
-export class PartijlidComponent implements OnInit {
-  @Input() partijlid!: Partijlid;
-  @Output() partijlidDeleted = new EventEmitter<number>(); // Emit event to parent component
+export class MinisterComponent implements OnInit {
+  @Input() minister!: Minister;
+  @Output() ministerDeleted = new EventEmitter<number>(); // Emit event to parent component
 
   constructor() { }
 

@@ -1,0 +1,15 @@
+@if(minister) {
+    <article class="max-w-md mx-auto border-black text-white bg-gray-800 border-4 shadow-lg rounded-lg overflow-hidden p-6 relative">
+            <img 
+              [src]="getSafeImageFilename(minister.regeringNaam)" 
+              alt="{{ minister.regeringNaam }}" 
+              class="absolute top-2 right-2 w-20 h-20 object-cover rounded-full border-2 border-black"
+            >
+        <!-- Card content -->
+        <h1 class="text-3xl font-bold italic mb-4 mt-8">{{ minister.naam }}</h1>
+        <p class="mb-2"><strong>Naam:</strong> {{ minister.partijlidNaam }}</p>
+        <p class="mb-2"><strong>Regering:</strong> {{ minister.regeringNaam }}</p>
+    </article>
+    
+}
+

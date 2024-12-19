@@ -10,10 +10,14 @@ import {HttpClient} from "@angular/common/http";
 export class PartijService {
 
   constructor(private httpClient: HttpClient) { }
-
-  getPartijen(): Observable<Partij[]> {
-    return this.httpClient.get<Partij[]>("http://localhost:8083/alle-partijen");
-  }
-
-
+    private apiUrl = "http://localhost:8082/api/partij"; 
+  
+  
+    getPartijen(): Observable<Partij[]> {
+      return this.httpClient.get<Partij[]>(`${this.apiUrl}/all`);
+    } 
+  
+    getPartijByNaam(naam: string): Observable<Partij> {
+        return this.httpClient.get<Partij>(`${this.apiUrl}/naam/${naam}`);
+    }
 }
