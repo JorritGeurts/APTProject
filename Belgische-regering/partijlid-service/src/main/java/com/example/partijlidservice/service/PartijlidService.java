@@ -1,4 +1,6 @@
 package com.example.partijlidservice.service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.example.partijlidservice.dto.PartijlidRequest;
 import com.example.partijlidservice.dto.PartijlidResponse;
@@ -17,6 +19,8 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class PartijlidService {
+
+    private static final Logger log = LoggerFactory.getLogger(PartijlidService.class);
 
     private final PartijlidRepository partijlidRepository;
     private final WebClient webClient;
@@ -92,8 +96,12 @@ public class PartijlidService {
 
     // Fetch Partij details by name
     private PartijResponse getPartijByName(String partijNaam) {
+
+        String url = partijServiceBaseUrl + "/api/partij/naam/{naam}";
+        log.info("Full URL: {}", url); // Add logging here to print the full URL
+
         return webClient.get()
-                .uri(partijServiceBaseUrl + "/api/partij/naam/{naam}", partijNaam)
+                .uri(url, partijNaam)
                 .retrieve()
                 .bodyToMono(PartijResponse.class)
                 .block();
