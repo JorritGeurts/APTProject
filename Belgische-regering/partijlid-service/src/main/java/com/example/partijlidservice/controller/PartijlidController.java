@@ -25,7 +25,6 @@ public class PartijlidController {
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public void createPartijlid(@RequestBody PartijlidRequest partijlidRequest) {
-        System.out.println("Received Request: " + partijlidRequest);
         partijlidService.createPartijlid(partijlidRequest);
     }
 

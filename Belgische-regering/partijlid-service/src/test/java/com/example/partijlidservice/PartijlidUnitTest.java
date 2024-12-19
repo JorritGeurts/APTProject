@@ -48,7 +48,7 @@ public class PartijlidUnitTest {
         ReflectionTestUtils.setField(partijlidService, "partijServiceBaseUrl", "http://localhost:8082");
     }
 
-    /*@Test
+    @Test
     public void testCreatePartijlid_Success() {
         // Arrange
         String partijNaam = "TestPartij";
@@ -87,7 +87,7 @@ public class PartijlidUnitTest {
 
         // Assert
         verify(partijlidRepository, times(1)).save(any(Partijlid.class));
-    }*/
+    }
 
     @Test
     public void testGetPartijlidByNaam_Success() {
