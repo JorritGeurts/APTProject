@@ -42,8 +42,8 @@ public class PartijlidService {
         Partijlid partijlid = Partijlid.builder()
                 .naam(partijlidRequest.getNaam())
                 .email(partijlidRequest.getEmail())
-                .partijNaam(partijResponse.getNaam()) // Extract name from PartijResponse
-                .regeringNaam(regeringResponse.getNaam()) // Extract name from RegeringResponse
+                .partijNaam(partijlidRequest.getPartijNaam()) // Extract name from PartijResponse
+                .regeringNaam(partijlidRequest.getRegeringNaam()) // Extract name from RegeringResponse
                 .build();
 
         partijlidRepository.save(partijlid);
