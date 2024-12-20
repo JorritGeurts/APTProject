@@ -31,12 +31,52 @@ spring:
             - Path=/partijlid/{segment}
           filters:
             - SetPath=/api/partijlid/{segment}
+        - id: partijlid-service-create
+          uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
+          predicates:
+            - Path=/partijlid/create
+          filters:
+            - SetPath=/api/partijlid/create
+        - id: partijlid-service-edit
+          uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
+          predicates:
+            - Path=/partijlid/{id}/edit
+            - Method=PUT
+          filters:
+            - SetPath=/api/partijlid/{id}/edit
+        - id: partijlid-service-delete
+          uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
+          predicates:
+            - Path=/partijlid/{id}/delete
+            - Method=DELETE
+          filters:
+            - SetPath=/api/partijlid/{id}/delete
         - id: minister-service
           uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
           predicates:
             - Path=/minister/{segment}
           filters:
             - SetPath=/api/minister/{segment}
+        - id: minister-service-create
+          uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
+          predicates:
+            - Path=/minister/create
+          filters:
+            - SetPath=/api/minister/create
+        - id: minister-service-edit
+          uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
+          predicates:
+            - Path=/minister/{id}/edit
+            - Method=PUT
+          filters:
+            - SetPath=/api/minister/{id}/edit
+        - id: minister-service-delete
+          uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
+          predicates:
+            - Path=/minister/{id}/delete
+            - Method=DELETE
+          filters:
+            - SetPath=/api/minister/{id}/delete
         - id: partij-service-all
           uri: http://${PARTIJ_SERVICE_BASEURL:localhost:8082}
           predicates:
@@ -65,3 +105,7 @@ spring:
             - Method=GET
           filters:
             - SetPath=/api/regering/naam/{naam}
+  logging:
+    level:
+      org.springframework.cloud.gateway: DEBUG
+      org.springframework.web: DEBUG
