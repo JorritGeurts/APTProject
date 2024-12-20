@@ -21,8 +21,8 @@ public class SecurityConfig {
                                 .pathMatchers(HttpMethod.GET, "/partij/{naam}").permitAll()
                                 .pathMatchers(HttpMethod.GET, "/alle-regeringen").permitAll()
                                 .pathMatchers(HttpMethod.GET, "/regering/{naam}").permitAll()
-                                .pathMatchers(HttpMethod.GET, "/partijlid").permitAll()
-                                .pathMatchers(HttpMethod.GET, "/minister").permitAll()
+                                .pathMatchers(HttpMethod.GET, "/partijlid/{segment}").permitAll()
+                                .pathMatchers(HttpMethod.GET, "/minister/{segment}").permitAll()
                                 .anyExchange().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(withDefaults()));
         return serverHttpSecurity.build();
