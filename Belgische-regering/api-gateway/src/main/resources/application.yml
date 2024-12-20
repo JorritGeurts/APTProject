@@ -31,6 +31,13 @@ spring:
             - Path=/partijlid/{segment}
           filters:
             - SetPath=/api/partijlid/{segment}
+        - id: partijlid-service-specificName
+          uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
+          predicates:
+            - Path=/partijlid/naam/{naam}
+            - Method=GET
+          filters:
+            - SetPath=/api/partijlid/naam/{naam}
         - id: partijlid-service-create
           uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
           predicates:
