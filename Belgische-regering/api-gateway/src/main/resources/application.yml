@@ -58,20 +58,20 @@ spring:
           filters:
             - SetPath=/api/minister/{segment}
         - id: minister-service-create
-          uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
+          uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
           predicates:
             - Path=/minister/create
           filters:
             - SetPath=/api/minister/create
         - id: minister-service-edit
-          uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
+          uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
           predicates:
             - Path=/minister/{id}/edit
             - Method=PUT
           filters:
             - SetPath=/api/minister/{id}/edit
         - id: minister-service-delete
-          uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
+          uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
           predicates:
             - Path=/minister/{id}/delete
             - Method=DELETE
