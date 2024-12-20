@@ -48,7 +48,8 @@ Ministers
 ## POSTMAN Endpoints
 Algemene endpoints
 - alle partijen
-Images/Alle-Partijen.png
+- ![Alt Text](Images/Alle-Partijen.png)
+
 - alle leden
   
 - lid met specifieke id
