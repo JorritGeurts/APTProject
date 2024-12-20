@@ -10,3 +10,55 @@ IMG van de Microservice
 - Docker Compose Deployment✅
 - Beveiliging✅
 - Unit Testing✅
+
+## Extra's:
+- Front-End✅
+
+## Microservices:
+- API-Gateway (Handeled alle routing naar de andere services)
+- Partijlid-Service (De hoofd-service, heeft alle personen die in deze applicatie voorkomen)
+- Partij-Service (Een service met alle verschillende partijen)
+- Regering-Service (Een service met alle verschillende regeringen)
+- Minister-Service (Een service met verschillende ministers)
+
+## API Endpoints
+Partijlid
+- "/all": geeft alle personenen
+- "/{id}": geeft de persoon met een specifieke id
+- "/naam/{naam}": geeft de persson met een specifieke naam
+- "/create": maakt een nieuwe persoon aan
+- "/{id}/edit": bewerkt de data van een bepaalde id
+- "/{id}/delete": verwijderd een bepaalde id
+
+Partijen
+- "/alle-partijen": geeft alle partijen
+- "/partij/{naam}: geeft de partij met een bepaalde naam
+
+Regeringen
+- "/alle-regeringen": geeft alle regeringen
+- "/regering/{naam}": geeft de regering met een bepaalde naam
+
+Ministers
+- "/all": geeft alle ministers
+- "/{id}": geeft de minister met een specifieke id
+- "/create": maakt een nieuwe minister aan
+- "/{id}/edit": bewerkt de data van een bepaalde id
+- "/{id}/delete": verwijderd een bepaalde id
+
+## POSTMAN Endpoints
+Algemene endpoints
+- alle partijen
+
+- alle leden
+  
+- lid met specifieke id
+  
+- lid met een specifieke naam
+  
+- create
+  
+- edit
+  
+- delete
+
+- unauthorized
