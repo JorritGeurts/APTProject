@@ -25,12 +25,19 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: partijlid-service
+        - id: partijlid-service-create
           uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
           predicates:
-            - Path=/partijlid/{segment}
+            - Path=/partijlid/create
           filters:
-            - SetPath=/api/partijlid/{segment}
+            - SetPath=/api/partijlid/create
+        - id: partijlid-service-edit
+          uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
+          predicates:
+            - Path=/partijlid/{id}/edit
+            - Method=PUT
+          filters:
+            - SetPath=/api/partijlid/{id}/edit
         - id: minister-service
           uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
           predicates:
