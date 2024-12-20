@@ -28,9 +28,9 @@ spring:
         - id: partijlid-service
           uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
           predicates:
-            - Path=/partijlid/{segment}
+            - Path=/partijlid
           filters:
-            - SetPath=/api/partijlid/{segment}
+            - SetPath=/api/partijlid
         - id: minister-service
           uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
           predicates:
