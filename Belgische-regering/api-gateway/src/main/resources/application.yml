@@ -48,7 +48,7 @@ spring:
           uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
           predicates:
             - Path=/partijlid/{id}/delete
-            - Method=PUT
+            - Method=DELETE
           filters:
             - SetPath=/api/partijlid/{id}/delete
         - id: minister-service
@@ -74,7 +74,7 @@ spring:
           uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
           predicates:
             - Path=/minister/{id}/delete
-            - Method=PUT
+            - Method=DELETE
           filters:
             - SetPath=/api/minister/{id}/delete
         - id: partij-service-all
