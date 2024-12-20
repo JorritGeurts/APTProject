@@ -65,3 +65,7 @@ spring:
             - Method=GET
           filters:
             - SetPath=/api/regering/naam/{naam}
+  logging:
+    level:
+      org.springframework.cloud.gateway: DEBUG
+      org.springframework.web: DEBUG
