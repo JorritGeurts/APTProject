@@ -115,7 +115,7 @@ services:
   image: jorritgeurts/br-angular-app:latest
   pull_policy: always
   ports:
-      - "4200:4200"
+      - "4200:80"
 
 volumes:
  mongodb_partij_data:
