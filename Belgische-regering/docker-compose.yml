@@ -3,7 +3,6 @@ version: '3.8'
 services:
  mongo-partij:
   image: mongo:latest
-  pull_policy: always
   ports:
     - 27018:27017
   volumes:
@@ -11,7 +10,6 @@ services:
 
  mongo-regering:
   image: mongo:latest
-  pull_policy: always
   ports:
     - 27017:27017
   volumes:
@@ -19,7 +17,6 @@ services:
     
  mysql-partijlid:
   image: mysql:latest
-  pull_policy: always
   ports:
     - 3308:3306
   volumes:
@@ -29,7 +26,6 @@ services:
     
  mysql-minister:
   image: mysql:latest
-  pull_policy: always
   ports:
     - 3307:3306
   volumes:

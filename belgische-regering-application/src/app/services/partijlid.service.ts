@@ -9,11 +9,11 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 export class PartijlidService {
 
   constructor(private httpClient: HttpClient) { }
-  private apiUrl = "http://localhost:8081/api/partijlid"; 
+  private apiUrl = "http://localhost:8083"; 
 
 
   getPartijleden(): Observable<Partijlid[]> {
-    return this.httpClient.get<Partijlid[]>(`${this.apiUrl}/all`);
+    return this.httpClient.get<Partijlid[]>(`${this.apiUrl}/partijleden`);
   }
 
   getPartijlidById(id: number): Observable<Partijlid> {

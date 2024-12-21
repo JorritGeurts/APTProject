@@ -16,17 +16,18 @@ public class SecurityConfig {
 
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
-        serverHttpSecurity.
-                authorizeExchange(exchange ->
+        serverHttpSecurity
+                .cors(cors -> cors.configurationSource(request -> {
+                        var config = new CorsConfiguration();
+                        config.addAllowedOrigin("");
+                        config.addAllowedMethod("");
+                        config.addAllowedHeader("*");
+                        return config;
+                    }))
+                .authorizeExchange(exchange ->
                         exchange.pathMatchers(HttpMethod.GET, "/alle-partijen", "/partij/{naam}", "/alle-regeringen", "/regering/{naam}", "/partijleden", "/minister/{segment}").permitAll()
                                 .anyExchange().authenticated())
-                .cors(cors -> cors.configurationSource(request -> {
-                    var config = new CorsConfiguration();
-                    config.addAllowedOrigin("");
-                    config.addAllowedMethod("");
-                    config.addAllowedHeader("*");
-                    return config;
-                }))
+
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(withDefaults()));
         return serverHttpSecurity.build();
     }
