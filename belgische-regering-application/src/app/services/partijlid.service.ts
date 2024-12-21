@@ -13,7 +13,7 @@ export class PartijlidService {
 
 
   getPartijleden(): Observable<Partijlid[]> {
-    return this.httpClient.get<Partijlid[]>(`${this.apiUrl}/partijleden`, {headers: new HttpHeaders().set('Authorization', 'my-auth-token')});
+    return this.httpClient.get<Partijlid[]>(`${this.apiUrl}/partijleden`);
   }
 
   getPartijlidById(id: number): Observable<Partijlid> {

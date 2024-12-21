@@ -19,8 +19,8 @@ public class SecurityConfig {
         serverHttpSecurity
                 .cors(cors -> cors.configurationSource(request -> {
                         var config = new CorsConfiguration();
-                        config.addAllowedOrigin("");
-                        config.addAllowedMethod("");
+                        config.addAllowedOrigin("*");
+                        config.addAllowedMethod("*");
                         config.addAllowedHeader("*");
                         return config;
                     }))
