@@ -15,5 +15,5 @@ FROM nginx:alpine
 # Copy built Angular files to Nginx's HTML directory
 COPY --from=build /app/dist/belgische-regering-application/browser/ /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 4200
 CMD ["nginx", "-g", "daemon off;"]

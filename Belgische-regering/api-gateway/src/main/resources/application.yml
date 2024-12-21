@@ -81,6 +81,13 @@ spring:
             - Method=GET
           filters:
             - SetPath=/api/minister/{id}
+        - id: minister-service-naam
+          uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
+          predicates:
+            - Path=/minister/naam/{naam}
+            - Method=GET
+          filters:
+            - SetPath=/api/minister/naam/{naam}
         - id: minister-service-create
           uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
           predicates:

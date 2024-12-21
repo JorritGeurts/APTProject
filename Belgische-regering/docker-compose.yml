@@ -112,10 +112,10 @@ services:
    REGERING_SERVICE_BASEURL: regering-service:8080
 
  angular-app:
-  image: jorritgeurts/angular-universal-nginx:latest
+  image: jorritgeurts/br-angular-app:latest
   pull_policy: always
   ports:
-      - "80:80"
+      - "4200:4200"
 
 volumes:
  mongodb_partij_data:
