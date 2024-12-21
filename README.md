@@ -15,11 +15,13 @@ IMG van de Microservice
 - Front-End✅
 
 ## Microservices:
-- API-Gateway (Handeled alle routing naar de andere services)
-- Partijlid-Service (De hoofd-service, heeft alle personen die in deze applicatie voorkomen)
-- Partij-Service (Een service met alle verschillende partijen)
-- Regering-Service (Een service met alle verschillende regeringen)
-- Minister-Service (Een service met verschillende ministers)
+- API-Gateway : 8300 (Handeled alle routing naar de andere services)
+- Partijlid-Service : 8081 (De hoofd-service, heeft alle personen die in deze applicatie voorkomen)
+- Partij-Service : 8082 (Een service met alle verschillende partijen)
+- Regering-Service : 8080 (Een service met alle verschillende regeringen)
+- Minister-Service : 8084 (Een service met verschillende ministers)
+
+- Front End : 4200
 
 ## API Endpoints
 Partijlid
