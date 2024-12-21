@@ -7,11 +7,6 @@ import org.springframework.security.config.annotation.web.reactive.EnableWebFlux
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
-
-import java.util.Arrays;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -23,27 +18,16 @@ public class SecurityConfig {
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
         serverHttpSecurity.
                 authorizeExchange(exchange ->
-                        exchange.pathMatchers(HttpMethod.GET, "/alle-partijen").permitAll()
-                                .pathMatchers(HttpMethod.GET, "/partij/{naam}").permitAll()
-                                .pathMatchers(HttpMethod.GET, "/alle-regeringen").permitAll()
-                                .pathMatchers(HttpMethod.GET, "/regering/{naam}").permitAll()
-                                .pathMatchers(HttpMethod.GET, "/partijlid/{segment}").permitAll()
-                                .pathMatchers(HttpMethod.GET, "/minister/{segment}").permitAll()
+                        exchange.pathMatchers(HttpMethod.GET, "/alle-partijen", "/partij/{naam}", "/alle-regeringen", "/regering/{naam}", "/partijlid/{segment}", "/minister/{segment}").permitAll()
                                 .anyExchange().authenticated())
+                .cors(cors -> cors.configurationSource(request -> {
+                    var config = new CorsConfiguration();
+                    config.addAllowedOrigin("");
+                    config.addAllowedMethod("");
+                    config.addAllowedHeader("*");
+                    return config;
+                }))
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(withDefaults()));
         return serverHttpSecurity.build();
-    }
-
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:80"));  // Angular URL
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(Arrays.asList("*"));
-        configuration.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/api/**", configuration);  // Apply to API paths
-        return source;
     }
 }
