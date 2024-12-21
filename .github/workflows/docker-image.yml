@@ -133,3 +133,35 @@ jobs:
 
       - name: Upload container to Docker Hub with Push
         run: docker push ${{ secrets.DOCKER_USER }}/br-api-gateway:latest
+  angular-application:
+    runs-on: ubuntu-latest
+    name: angular-application
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          cd belgische-regering-application
+          npm install
+
+      # Step 4: Build the Angular App (production build)
+      - name: Build Angular App
+        run: |
+          cd belgische-regering-application
+          npm run build --prod
+        
+      - name: Docker login
+        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Docker Build
+        run: docker build -t ${{ secrets.DOCKER_USER }}/br-angular-app:latest ./belgische-regering-application
+
+      - name: Upload container to Docker Hub with Push
+        run: docker push ${{ secrets.DOCKER_USER }}/br-angular-app:latest
