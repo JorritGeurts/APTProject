@@ -18,7 +18,7 @@ public class SecurityConfig {
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
         serverHttpSecurity.
                 authorizeExchange(exchange ->
-                        exchange.pathMatchers(HttpMethod.GET, "/alle-partijen", "/partij/{naam}", "/alle-regeringen", "/regering/{naam}", "/partijlid/{segment}", "/minister/{segment}").permitAll()
+                        exchange.pathMatchers(HttpMethod.GET, "/alle-partijen", "/partij/{naam}", "/alle-regeringen", "/regering/{naam}", "/partijleden", "/minister/{segment}").permitAll()
                                 .anyExchange().authenticated())
                 .cors(cors -> cors.configurationSource(request -> {
                     var config = new CorsConfiguration();
