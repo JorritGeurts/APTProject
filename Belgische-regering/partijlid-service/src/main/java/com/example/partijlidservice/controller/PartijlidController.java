@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/partijlid")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200")
 public class PartijlidController {
 
     private final PartijlidService partijlidService;
