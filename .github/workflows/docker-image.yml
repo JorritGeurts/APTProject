@@ -147,11 +147,15 @@ jobs:
 
       # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd belgische-regering-application
+          npm install
 
       # Step 4: Build the Angular App (production build)
       - name: Build Angular App
-        run: npm run build --prod
+        run: |
+          cd belgische-regering-application
+          npm run build --prod
         
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
