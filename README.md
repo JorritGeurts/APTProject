@@ -43,6 +43,7 @@ Regeringen
 Ministers
 - "/all": geeft alle ministers
 - "/{id}": geeft de minister met een specifieke id
+- "/naam/{naam}": geeft de minister met een specifieke naam
 - "/create": maakt een nieuwe minister aan
 - "/{id}/edit": bewerkt de data van een bepaalde id
 - "/{id}/delete": verwijderd een bepaalde id
