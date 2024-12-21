@@ -111,6 +111,12 @@ services:
    PARTIJ_SERVICE_BASEURL: partij-service:8082
    REGERING_SERVICE_BASEURL: regering-service:8080
 
+ angular-app:
+  image: jorritgeurts/angular-universal-nginx:latest
+  pull_policy: always
+  ports:
+      - "80:80"
+
 volumes:
  mongodb_partij_data:
  mongodb_regering_data:

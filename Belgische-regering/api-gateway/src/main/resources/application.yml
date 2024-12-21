@@ -32,6 +32,13 @@ spring:
             - Method=GET
           filters:
             - SetPath=/api/partijlid/all
+        - id: partijlid-service-id
+          uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
+          predicates:
+            - Path=/partijlid/{id}
+            - Method=GET
+          filters:
+            - SetPath=/api/partijlid/{id}
         - id: partijlid-service-specificName
           uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
           predicates:
@@ -43,6 +50,7 @@ spring:
           uri: http://${PARTIJLID_SERVICE_BASEURL:localhost:8081}
           predicates:
             - Path=/partijlid/create
+            - Method=POST
           filters:
             - SetPath=/api/partijlid/create
         - id: partijlid-service-edit
@@ -62,13 +70,22 @@ spring:
         - id: minister-service
           uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
           predicates:
-            - Path=/minister/{segment}
+            - Path=/ministers
+            - Method=GET
           filters:
-            - SetPath=/api/minister/{segment}
+            - SetPath=/api/minister/all
+        - id: minister-service-id
+          uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
+          predicates:
+            - Path=/minister/{id}
+            - Method=GET
+          filters:
+            - SetPath=/api/minister/{id}
         - id: minister-service-create
           uri: http://${MINISTER_SERVICE_BASEURL:localhost:8084}
           predicates:
             - Path=/minister/create
+            - Method=POST
           filters:
             - SetPath=/api/minister/create
         - id: minister-service-edit
