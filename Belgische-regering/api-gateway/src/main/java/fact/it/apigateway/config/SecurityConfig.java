@@ -25,7 +25,7 @@ public class SecurityConfig {
                         return config;
                     }))
                 .authorizeExchange(exchange ->
-                        exchange.pathMatchers(HttpMethod.GET, "/alle-partijen", "/partij/{naam}", "/alle-regeringen", "/regering/{naam}", "/partijleden","/partijlid/{id}", "/partijlid/naam/{naam}", "/ministers", "/minister/{id}", "/minister/naam/{naam}").permitAll()
+                        exchange.pathMatchers(HttpMethod.GET, "/partijen", "/partij/naam/{naam}", "/regeringen", "/regering/naam/{naam}", "/partijleden","/partijlid/{id}", "/partijlid/naam/{naam}", "/ministers", "/minister/{id}", "/minister/naam/{naam}").permitAll()
                                 .anyExchange().authenticated())
 
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(withDefaults()));
