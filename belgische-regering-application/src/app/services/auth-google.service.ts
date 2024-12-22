@@ -28,18 +28,10 @@ export class AuthGoogleService {
 
     this.oAuthService.setStorage(localStorage)
 
-    this.oAuthService.loadDiscoveryDocumentAndTryLogin().then(() => {
-      console.log('OAuth Service Initialized');
-      console.log('Access Token:', this.oAuthService.getAccessToken());
-      console.log('ID Token:', this.oAuthService.getIdToken());
-      console.log('Identity Claims:', this.oAuthService.getIdentityClaims());
-    }).catch((error) => {
-      console.error('Error during login:', error);
-    });
+    this.oAuthService.loadDiscoveryDocumentAndTryLogin();
   }
 
   login(){
-    console.log("Triggered");
     this.oAuthService.initImplicitFlow();
   }
 
