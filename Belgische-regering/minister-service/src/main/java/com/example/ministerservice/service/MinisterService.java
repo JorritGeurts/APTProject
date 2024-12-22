@@ -6,6 +6,7 @@ import com.example.ministerservice.dto.PartijlidResponse;
 import com.example.ministerservice.dto.RegeringResponse;
 import com.example.ministerservice.model.Minister;
 import com.example.ministerservice.repository.MinisterRepository;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -27,9 +28,19 @@ public class MinisterService {
     @Value("${partijlidservice.baseurl}")
     private String partijlidServiceBaseUrl;
 
-    /**
-     * Get a list of all ministers.
-     */
+    @PostConstruct
+    public void loadData() {
+        if (ministerRepository.count() <= 0) {
+            Minister minister1 = Minister.builder()
+                    .naam("Premier")
+                    .partijlidNaam("Alexander De Croo")
+                    .regeringNaam("Federaal")
+                    .build();
+
+            ministerRepository.save(minister1);
+        }
+    }
+
     public List<MinisterResponse> getAllMinisters() {
         List<Minister> ministers = ministerRepository.findAll();
         return ministers.stream()
