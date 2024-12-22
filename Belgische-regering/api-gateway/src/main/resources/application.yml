@@ -112,28 +112,28 @@ spring:
         - id: partij-service-all
           uri: http://${PARTIJ_SERVICE_BASEURL:localhost:8082}
           predicates:
-            - Path=/alle-partijen
+            - Path=/partijen
             - Method=GET
           filters:
             - SetPath=/api/partij/all
         - id: partij-service-naam
           uri: http://${PARTIJ_SERVICE_BASEURL:localhost:8082}
           predicates:
-            - Path=/partij/{naam}
+            - Path=/partij/naam/{naam}
             - Method=GET
           filters:
             - SetPath=/api/partij/naam/{naam}
         - id: regering-service-all
           uri: http://${REGERING_SERVICE_BASEURL:localhost:8080}
           predicates:
-            - Path=/alle-regeringen
+            - Path=/regeringen
             - Method=GET
           filters:
             - SetPath=/api/regering/all
         - id: regering-service-naam
           uri: http://${REGERING_SERVICE_BASEURL:localhost:8080}
           predicates:
-            - Path=/regering/{naam}
+            - Path=/regering/naam/{naam}
             - Method=GET
           filters:
             - SetPath=/api/regering/naam/{naam}
