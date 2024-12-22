@@ -9,35 +9,35 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 export class MinisterService {
 
   constructor(private httpClient: HttpClient) { }
-  private apiUrl = "http://localhost:8084/api/minister"; 
+  private apiUrl = "http://localhost:8083"; 
 
 
   getMinisters(): Observable<Minister[]> {
-    return this.httpClient.get<Minister[]>(`${this.apiUrl}/all`);
+    return this.httpClient.get<Minister[]>(`${this.apiUrl}/ministers`);
   }
 
   getMinisterById(id: number): Observable<Minister> {
-    return this.httpClient.get<Minister>(`${this.apiUrl}/${id}`);
+    return this.httpClient.get<Minister>(`${this.apiUrl}/minister/${id}`);
   }
 
   getMinisterByNaam(naam: string): Observable<Minister> {
-    return this.httpClient.get<Minister>(`${this.apiUrl}/naam/${naam}`);
+    return this.httpClient.get<Minister>(`${this.apiUrl}/minister/naam/${naam}`);
   }
 
   postMinister(minister: Minister): Observable<Minister> {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.httpClient.post<Minister>(`${this.apiUrl}/create`, minister, {headers: headers, });
+    return this.httpClient.post<Minister>(`${this.apiUrl}/minister/create`, minister, {headers: headers, });
   }
 
   putMinister(id: number, minister: Minister): Observable<Minister> {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.httpClient.put<Minister>(`${this.apiUrl}/${id}/edit`, minister, {headers: headers, });
+    return this.httpClient.put<Minister>(`${this.apiUrl}/minister/${id}/edit`, minister, {headers: headers, });
 
   }
 
   deleteMinister(id: number): Observable<Minister> {
-    return this.httpClient.delete<Minister>(`${this.apiUrl}/${id}/delete`);
+    return this.httpClient.delete<Minister>(`${this.apiUrl}/minister/${id}/delete`);
   }
 }
