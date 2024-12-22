@@ -6,8 +6,8 @@ Wij hebben voor onze opdracht een applicatie ontwikkeld voor de Belgische Regeri
 ![API-Belgische-Regering drawio (2)](https://github.com/user-attachments/assets/56da6fa9-d002-47f6-8600-2db6da746b37)
 
 ## Demo/uitleg video:
-- Deel 1: https://youtu.be/dCmYTDLqt1Y
-- Deel 2: https://youtu.be/lFkX6wppBqQ
+- Deel 1: https://youtu.be/XE8XR09iLSY
+- Deel 2: https://youtu.be/uGIJvmJ8IuU
 
 ## CheckList:
 - 4 Microservices✅
