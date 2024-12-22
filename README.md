@@ -49,8 +49,6 @@ Ministers
 
 ## POSTMAN Endpoints
 Algemene endpoints
-- alle partijen
-![Alt Text](Images/Alle-Partijen.png)
 
 - alle leden
 ![Alt Text](Images/Alle-Leden.png)
@@ -61,14 +59,44 @@ Algemene endpoints
 - lid met een specifieke naam
 ![Alt Text](Images/PartijlidNaam.png)
 
-- create
+- create van een partijlid
 ![Alt Text](Images/CreatingLid.png)
 
-- edit
+- edit van een partijlid
 ![Alt Text](Images/EditLid.png)
 
-- delete
+- delete van een partijlid
 ![Alt Text](Images/DeleteLid.png)
+
+- alle partijen
+![Alt Text](Images/Alle-Partijen.png)
+
+- partij bij naam
+![Alt Text](Images/PartijNaam.png)
+
+- alle regeringen
+![Alt Text](Images/Alle-Regeringen.png)
+
+- regering bij naam
+![Alt Text](Images/RegeringNaam.png)
+
+- alle ministers
+![Alt Text](Images/Alle-Ministers.png)
+
+- minster met specifieke id
+![Alt Text](Images/MinisterId.png)
+
+- minister met een specifieke naam van functie (minister naam, niet persoon)
+![Alt Text](Images/MinisterNaam.png)
+
+- create van een minister
+![Alt Text](Images/MinisterCreate.png)
+
+- edit van een minister
+![Alt Text](Images/MinisterEdit.png)
+
+- delete van een minister
+![Alt Text](Images/MinisterDelete.png)
 
 - unauthorized
 ![Alt Text](Images/Unauthorized.png)
