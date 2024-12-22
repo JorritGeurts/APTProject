@@ -6,7 +6,7 @@ IMG van de Microservice
 
 ## CheckList:
 - 4 Microservices✅
-- CI/CD Deployment
+- CI/CD Deployment✅
 - Docker Compose Deployment✅
 - Beveiliging✅
 - Unit Testing✅
