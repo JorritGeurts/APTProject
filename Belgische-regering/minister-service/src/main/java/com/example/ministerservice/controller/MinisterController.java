@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/minister")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200")
 public class MinisterController {
 
     private final MinisterService ministerService;
