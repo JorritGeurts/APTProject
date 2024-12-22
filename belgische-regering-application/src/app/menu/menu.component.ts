@@ -50,7 +50,6 @@ export class MenuComponent implements OnInit {
 
   //Authentication
   singInWithGoogle() {
-    console.log("Login button clicked");
     this.authService.login();
   }
 
