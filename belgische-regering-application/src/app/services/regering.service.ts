@@ -10,14 +10,14 @@ import {HttpClient} from "@angular/common/http";
 export class RegeringService {
 
    constructor(private httpClient: HttpClient) { }
-      private apiUrl = "http://localhost:8080/api/regering"; 
+      private apiUrl = "http://localhost:8083"; 
     
     
       getRegeringen(): Observable<Regering[]> {
-        return this.httpClient.get<Regering[]>(`${this.apiUrl}/all`);
+        return this.httpClient.get<Regering[]>(`${this.apiUrl}/regeringen`);
       } 
     
       getRegeringByNaam(naam: string): Observable<Regering> {
-          return this.httpClient.get<Regering>(`${this.apiUrl}/naam/${naam}`);
+          return this.httpClient.get<Regering>(`${this.apiUrl}/regering/naam/${naam}`);
       }
 }
