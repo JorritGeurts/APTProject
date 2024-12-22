@@ -50,13 +50,15 @@ export class MenuComponent implements OnInit {
 
   //Authentication
   singInWithGoogle() {
-    console.log("Login button clicked");
     this.authService.login();
   }
 
-  Logout(){
-    this.authService.logout();
-    this.router.navigate(["/"]);
+  Logout() {
+    const isConfirmed = window.confirm("Bevestig dat u wilt uitloggen a.u.b.");
+    if (isConfirmed) {
+      this.authService.logout();
+      this.router.navigate(["/"]);
+    }
   }
 
   isAuthenticated(): boolean{
