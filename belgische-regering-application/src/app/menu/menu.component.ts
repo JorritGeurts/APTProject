@@ -50,12 +50,17 @@ export class MenuComponent implements OnInit {
 
   //Authentication
   singInWithGoogle() {
+    console.log("Login button clicked");
     this.authService.login();
   }
 
   Logout(){
     this.authService.logout();
     this.router.navigate(["/"]);
+  }
+
+  isAuthenticated(): boolean{
+    return this.authService.isAuthenticated()
   }
 
 }

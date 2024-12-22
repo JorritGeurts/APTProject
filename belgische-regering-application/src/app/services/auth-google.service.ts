@@ -18,16 +18,28 @@ export class AuthGoogleService {
       issuer: 'https://accounts.google.com',
       strictDiscoveryDocumentValidation: false,
       clientId: '85447181634-1fle16mtgv0bgb4u2t5n1m1lp1sugv1q.apps.googleusercontent.com',
-      redirectUri: window.location.origin + "/admin/partijleden",
+      redirectUri: window.location.origin + "/",
       scope: 'openid profile email',
+      showDebugInformation: true, // Logs OAuth details to console
     }
 
     this.oAuthService.configure(authConfig);
     this.oAuthService.setupAutomaticSilentRefresh();
-    this.oAuthService.loadDiscoveryDocumentAndTryLogin();
+
+    this.oAuthService.setStorage(localStorage)
+
+    this.oAuthService.loadDiscoveryDocumentAndTryLogin().then(() => {
+      console.log('OAuth Service Initialized');
+      console.log('Access Token:', this.oAuthService.getAccessToken());
+      console.log('ID Token:', this.oAuthService.getIdToken());
+      console.log('Identity Claims:', this.oAuthService.getIdentityClaims());
+    }).catch((error) => {
+      console.error('Error during login:', error);
+    });
   }
 
   login(){
+    console.log("Triggered");
     this.oAuthService.initImplicitFlow();
   }
 
@@ -43,4 +55,9 @@ export class AuthGoogleService {
   getToken() {
     return this.oAuthService.getAccessToken();
   }
+
+  isAuthenticated(): boolean {
+    return this.oAuthService.hasValidAccessToken();
+  }
+
 }

@@ -37,16 +37,19 @@
               <a (click)="onHamburgerItemClick()" routerLink="/ministers" routerLinkActive="active"
                   [routerLinkActiveOptions]="{ exact: true }" class="block py-2 pr-4 pl-3 rounded">Ministers</a>
               </li>
+              @if(!isAuthenticated()){
               <li>
                 <a class="login-button" (click)="singInWithGoogle()"    >
                     Login
                 </a>
               </li>
+                }@else{
               <li>
                 <a class="login-button" (click)="Logout()"    >
                     Logout
                 </a>
               </li>
+                
               <li>
                   <button id="dropdownNavbarLink" (click)="onAdminDropDownClick()"
                       class="flex justify-between items-center py-2 pr-4 pl-3 w-full">Admin <svg class="ml-1 w-5 h-5"
@@ -71,6 +74,7 @@
                       </ul>
                   </div>
               </li>
+            }
           </ul>
       </div>
   </div>

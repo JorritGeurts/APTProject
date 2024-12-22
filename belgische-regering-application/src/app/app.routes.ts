@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PartijListComponent } from './partij-list/partij-list.component';
 import { HomeComponent } from './home/home.component';
 import { RegeringListComponent } from './regering-list/regering-list.component';
@@ -8,6 +8,8 @@ import { PartijlidFormComponent } from './partijlid-form/partijlid-form.componen
 import { MinisterListComponent } from './minister-list/minister-list.component';
 import { MinisterCrudComponent } from './minister-crud/minister-crud.component';
 import { MinisterFormComponent } from './minister-form/minister-form.component';
+import { AuthGuard } from './services/auth.guard';
+import { NgModule } from '@angular/core';
 
 
 export const routes: Routes = [
@@ -15,10 +17,11 @@ export const routes: Routes = [
     { path: 'partijen', component: PartijListComponent },
     { path: 'regeringen', component: RegeringListComponent },
     { path: 'partijleden', component: PartijlidListComponent },
-    { path: 'admin/partijleden', component: PartijlidCrudComponent },
-    { path: 'admin/partijlid/form', component: PartijlidFormComponent },
     { path: 'ministers', component: MinisterListComponent },
-    { path: 'admin/ministers', component: MinisterCrudComponent },
-    { path: 'admin/minister/form', component: MinisterFormComponent },
-];
 
+    // Admin routes (protected by AuthGuard)
+    { path: 'admin/partijleden', component: PartijlidCrudComponent, canActivate: [AuthGuard] },
+    { path: 'admin/partijlid/form', component: PartijlidFormComponent, canActivate: [AuthGuard] },
+    { path: 'admin/ministers', component: MinisterCrudComponent, canActivate: [AuthGuard] },
+    { path: 'admin/minister/form', component: MinisterFormComponent, canActivate: [AuthGuard] },
+];
