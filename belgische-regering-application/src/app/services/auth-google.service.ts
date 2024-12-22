@@ -48,6 +48,10 @@ export class AuthGoogleService {
     return this.oAuthService.getAccessToken();
   }
 
+  getIdToken() {
+    return this.oAuthService.getIdToken();  // Get the current ID token
+  }
+
   isAuthenticated(): boolean {
     return this.oAuthService.hasValidAccessToken();
   }
