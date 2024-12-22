@@ -1,6 +1,6 @@
 # APTProject - Belgische Regering 2020-2024
 
-Wij hebben voor onze opdracht een applicatie ontwikkeld voor de Belgische Regering van 2020-2024. Onze applicatie heeft 4 micro-services geïmplementeerd die de nodige functionaliteiten aanbied. In onze applicatie kunnen de verschillende partijen, regeringen, ministers en ook natuurlijk alle leden worden gemanaged. Elke micro-service bied de benodigde functionaliteiten aan om alles succesvol te laten verlopen. Alles loopt dan via een API-Gateway die alle routing handelt. Iedere persoon kan op onze applicatie komen om alles te bekijken, maar enkel de admins kunnen de data aanpassen. Wij maken gebruik van 0Auth beveliging om de data veilig en integer te houden.
+Wij hebben voor onze opdracht een applicatie ontwikkeld voor de Belgische Regering van 2020-2024. Onze applicatie heeft 4 micro-services geïmplementeerd die de nodige functionaliteiten aanbied. In onze applicatie kunnen de verschillende partijen, regeringen, ministers en ook natuurlijk alle leden worden gemanaged. Elke micro-service bied de benodigde functionaliteiten aan om alles succesvol te laten verlopen. Alles loopt dan via een API-Gateway die alle routing handelt. Iedere persoon kan op onze applicatie komen om alles te bekijken, maar enkel de admins kunnen de data aanpassen. Wij maken gebruik van oAuth beveliging om de data veilig en integer te houden.
 
 IMG van de Microservice
 
@@ -12,10 +12,10 @@ IMG van de Microservice
 - Unit Testing✅
 
 ## Extra's:
-- Front-End✅
+- Front-end in container✅
 
 ## Microservices:
-- API-Gateway : 8300 (Handeled alle routing naar de andere services)
+- API-Gateway : 8083 (Handeled alle routing naar de andere services)
 - Partijlid-Service : 8081 (De hoofd-service, heeft alle personen die in deze applicatie voorkomen)
 - Partij-Service : 8082 (Een service met alle verschillende partijen)
 - Regering-Service : 8080 (Een service met alle verschillende regeringen)
