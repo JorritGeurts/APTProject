@@ -1,15 +1,22 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { AuthGoogleService } from '../services/auth-google.service';
+
+//AuthModules
+const MODULES: any[] = [FormsModule, ReactiveFormsModule]
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, MODULES],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
 export class MenuComponent implements OnInit {
+  private authService = inject(AuthGoogleService)
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -39,6 +46,16 @@ export class MenuComponent implements OnInit {
     this.closeAdminDropDown();
     this.hamburgerOpen = false;
     this.router.navigate([path]);
+  }
+
+  //Authentication
+  singInWithGoogle() {
+    this.authService.login();
+  }
+
+  Logout(){
+    this.authService.logout();
+    this.router.navigate(["/"]);
   }
 
 }

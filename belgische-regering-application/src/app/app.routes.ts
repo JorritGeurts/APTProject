@@ -19,6 +19,6 @@ export const routes: Routes = [
     { path: 'admin/partijlid/form', component: PartijlidFormComponent },
     { path: 'ministers', component: MinisterListComponent },
     { path: 'admin/ministers', component: MinisterCrudComponent },
-    { path: 'admin/minister/form', component: MinisterFormComponent }
+    { path: 'admin/minister/form', component: MinisterFormComponent },
 ];
 
